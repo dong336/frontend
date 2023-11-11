@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/* cs center */
+.faq_tab{margin:0 0 10px;border-bottom:1px solid #000}
+.faq_tab:after{content:"";display:block;clear:both}
+.faq_tab li{float:left;margin:0 -1px -1px 0}
+.faq_tab li a{display:block;width:99px;height:43px;text-align:center;font-size:13px;color:#666;line-height:44px;font-weight:bold;border:1px solid #bebbb9;border-bottom:none;background:white}
+.faq_tab li.active{position:relative}
+.faq_tab li.active a{width:98px;padding:0 0 1px;color:#333;border:1px solid #000;border-bottom:none}
+
+.faq_list{border-top:solid 1px #444;margin-top:10px;}
+.faq_list.no_line {border-top:none 0;margin-top:0;}
+.faq_list dt,
+.faq_list dd{position:relative;border-bottom:1px solid #e2e2e2;}
+.faq_list .icon {display:block;position:absolute;left:18px;font-weight:bold;color:#000}
+.faq_list dt .icon{top:12px}
+.faq_list dd .icon{top:20px}
+.faq_list dt{padding:13px 19px 11px 48px;color:#666}
+.faq_list dt .type{color:#000;margin-right:5px}
+.faq_list dd{display:none;padding:21px 19px 17px 48px;background-color:#f9f9f9;color:#444}
+.faq_none{border-bottom:1px solid #e2e2e2;font-size:11px;text-align:center;padding:13px 0;margin-bottom:50px}
+
+/* main */
+.paging{margin-bottom:60px}
+.faq_quick_link{padding-left:10px}
+.faq_quick_link a{margin-right:15px}
+
+/* faq - id main 과 동일 */
+.quesiton_admin{padding:18px;text-align:center;line-height:25px;border:1px solid #eee;background:#fafafa}
+
+/* personal */
+.personal_info{padding:11px 10px 10px;font-size:11px;border-bottom:1px solid #bbb;color:#414141}
+.personal_info img{margin:-1px 10px 0 0}
+
+/* 박스 */
+.gradient_box{margin-bottom:30px;padding:18px;line-height:25px;border:1px solid #eee;background:#fafafa}
+.gradient_box input{margin:0}
+.gradient_box label{margin:0 15px 0 5px}
+.gradient_box .smallbutton{width:80px}

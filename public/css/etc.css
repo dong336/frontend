@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+.heading_mar{padding:0 0 11px 9px;font-size:0;line-height:0}
+
+/* etc */
+#etc_content{margin-bottom:50px;padding:15px 0;color:#666}
+
+/*���.�����ȳ�*/
+div.box_guide {margin-bottom:20px;padding:9px 10px;border:1px solid #dbdbdb;border-top:1px solid #444;background-color:#f3f3f3}
+div.box_guide div{padding:18px;border:1px solid #dbdbdb;background-color:#fff}
+div.box_guide p strong{color:#000}
+div.box_guide ul li{padding-left:10px;line-height:19px;background:url(../imgs/icon/bul_red_square.gif) 0 9px no-repeat}
+div.box_guide ul li.bank{margin-top:20px;padding-left:0;background:url(../imgs/icon/bul_red_square.gif) 0 0 no-repeat}
+div.box_guide ul li.bank table{border-top:solid 1px #bababa;border-left:solid 1px #dbdbdb}
+div.box_guide ul li.bank table thead{background-color:#f9f9f9;border-bottom:solid 1px #dbdbdb}
+div.box_guide ul li.bank table thead tr td{padding:9px 0 7px;text-align:center;color:#444;border-right:solid 1px #dbdbdb}
+div.box_guide ul li.bank table tbody{background-color:#fff;border-bottom:solid 1px #dbdbdb}
+div.box_guide ul li.bank table tbody tr td{padding:9px 0 7px;text-align:center;color:#666;border-right:solid 1px #dbdbdb}
+
+.partnershipList{padding:0 0 0 1px;text-align:center}
+.partnershipList li{display:inline-block;padding:0 2px 0 6px;vertical-align:top;border-left:1px dashed #acacac}
+.partnershipList li a,
+.partnershipList li img{vertical-align:top}
+.partnershipList li:first-child{padding:0 2px 0 0;border:none}

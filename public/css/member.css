@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/*---  회원관련 내 테이블은 commom.css에서 제어해줌 ---*/
+
+.join_title{margin-bottom:13px}
+
+/* inform box */
+.join_inform{margin-bottom:38px;padding:15px 20px;font-size:11px;color:#666;background:#f8f8f8;}
+
+/* 이용약관,개인정보 내용 */
+div.box_guide{margin:12px 0;padding:9px 10px;border:1px solid #dbdbdb;border-top:1px solid #444;background-color:#f3f3f3}
+div.box_guide div{overflow-y:scroll;height:212px;padding:18px;border:1px solid #dbdbdb;background-color:#fff;line-height:18px;color:#666}
+div.box_guide div strong{color:#000}
+div.agree_check{margin-bottom:30px;font-size:13px;text-align:right}
+div.agree_check input{margin:0 0 0 18px}
+div.agree_check label{color:#666}
+
+/* 본인인증 */
+.box_verity{margin:12px 0;border-top:1px solid #444;border-bottom:solid 1px #dbdbdb}
+.box_verity .type_check{margin:20px 9px 15px;font-size:13px;text-align:left}
+.box_verity .type_check input{margin:0 0 0 18px}
+.box_verity .type_check label{color:#666}
+.box_verity .type_btn{position:relative;padding:27px 27px 27px 173px;background:#f1f1f1}
+.box_verity .type_btn a{position:absolute;top:27px;left:27px;width:126px;height:44px;box-sizing:border-box;text-align:center;font-size:15px;color:white;line-height:42px;font-weight:bold;border:1px solid #444;background:#444}
+.box_verity .type_btn a:after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;box-sizing:border-box;border:1px solid #747474}
+.box_verity .type_btn p{font-size:13px;color:#666;line-height:18px;padding:4px 0}
+
+.box_verity ul{margin:20px 27px}
+.box_verity ul li{color:#888}
+
+/* 아이디찾기, 비밀번호찾기 */
+.box_find{margin:0 auto 30px;}
+.box_find .type_check{padding:20px 9px 0;text-align:left;border-top:1px solid #444;margin:12px 0 0}
+.box_find .type_check input{margin:0 0 0 18px}
+.box_find .type_check label{color:#666}
+.box_find .enter_info{border-top:solid 1px #ddd;border-bottom:solid 1px #eee;background:#fafafa;padding:20px 27px;margin-top:15px}
+.box_find .enter_info table{table-layout:fixed}
+.box_find .enter_info table th{text-align:left;font-weight:normal;padding:5px 10px;color:#666;line-height:25px;background:url(../imgs/icon/bul_red_square.gif) 0 16px no-repeat}
+.box_find .enter_info table td{color:#666;text-align:left;line-height:25px;}
+.box_find .enter_info table td button.floatL{width:88px;height:20px;margin-left:15px;text-align:center;font-size:12px;color:white;line-height:18px;border:1px solid black;background:#444}
+
+/* 로그인 */
+/* 버튼 */
+.btn-bk {display:block;width:100%;height:50px;background-color: #000;text-align:center;font-size: 16px;color:#fff;line-height: 50px;}
+.btn-wh{display:block;border:1px solid #ddd;width:100%;height:50px;box-sizing:border-box;line-height:48px;color:#000;font-size:16px;text-align:center;margin-top: 35px;}
+
+.checkboxDummy{display:inline-block;position:relative;width:20px;height:20px;box-sizing:border-box;vertical-align:top;background:url(../imgs/global/checkbox.png) 0 0 no-repeat}
+.checkboxDummy input[type=checkbox]{visibility:visible;position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;box-sizing:border-box;opacity:0;cursor:pointer}
+.checkboxDummy.active{background-position:0 -30px}
+.checkboxDummy.active.bold{background-position:0 -60px}
+.checkboxDummy.active.highlight{background-position:0 -90px}
+.checkboxDummy.disabled{opacity:.4}
+.cont-wrap .loginform input.input+label,.cont-wrap .loginform .inputDummy+label{display:inline-block;padding:0 0 2px 8px;vertical-align:top;font-size:14px;color:#000;line-height:18px;font-weight:400}
+.cont-wrap .loginform input[type=text],.cont-wrap .loginform input[type=password],.cont-wrap .loginform input[type=search]{margin:0;padding:8px 15px 9px;box-sizing:border-box;vertical-align:top;font-size:14px;color:#333;line-height:21px;font-weight:400;font-family:noto sans kr,sans-serif;border:1px solid #ddd;background:#fff}
+
+.page-title2 {padding: 97px 0 102px;text-align: center;font-size: 38px;color: #000;line-height: 37px;font-weight: 500}
+.type_select {overflow:hidden;}
+.type_select a {display:block;width:50%;float:left;border-bottom: solid 4px #ddd;text-align:center;font-size: 16px;color:#999;height: 26px;line-height: 1;font-weight: 500;}
+.type_select a.on {border-bottom: solid 4px #000;color: #000;}
+.cont-wrap{width: 500px;margin: 0 auto 120px;}
+.cont-wrap .loginform {display:block;position:relative;margin: 60px 0;}
+.cont-wrap .loginform .caution{color:#ff0000; font-size:12px; margin-top:12px;}
+.cont-wrap .loginform .caution:before{content:'!';display:inline-block;border:1px solid #ff0000;border-radius:50%;width: 14px;height: 14px;text-align: center;line-height: 12px;margin-right: 7px;box-sizing: border-box;font-size: 10px;}
+.cont-wrap .loginform input.wide {display:block;width:100%;margin-top: 16px;}
+.cont-wrap .loginform .save {display:inline-block;margin-top:20px;}
+.cont-wrap .loginform .btn-find{margin-top:20px;line-height:20px;font-size: 14px;}
+.cont-wrap .loginform .btn-find a{font-size:14px;color: #999;float: left;}
+.cont-wrap .loginform .btn-find a:before{content:'';display: inline-block;width: 1px;height: 12px;background: #999;margin: 0 10px;vertical-align: middle;}
+.cont-wrap .loginform .btn-find a:first-child:before{display:none;}
+.cont-wrap .loginform .info{margin-top: 15px;}
+.cont-wrap .loginform .info span{display:block;color: #666;font-size:14px;line-height: 24px;}
+.cont-wrap .loginform .info span:before{content:'';display:inline-block;width:2px;height:2px;border-radius:50%;background:#898989;margin-right: 8px;vertical-align: middle;}
+.cont-wrap .noti {text-align:center;font-size:14px;line-height:24px;margin-top: 35px;color: #666;}
+.cont-wrap .login-bottom{border-top: 1px solid #eee; margin-top:60px;}
+
+/* sns관련 */
+.snslogin {text-align: center;padding-top: 40px;}
+.snslogin h3 {text-align:center;font-size:18px;color:#000}
+.snslogin h3 small {display:block;color:#999;font-size:12px;margin-top:5px;}
+.snslogin ul {display: inline-block;}
+.snslogin ul li {margin: 0 15px;float: left; width:50px; height:50px;}
+.snslogin ul li.kakao a{display:block; width:50px; height:50px;background:url(../imgs/icon/kakao.png) no-repeat;}
+.snslogin ul li.naver a{display:block; width:50px; height:50px;background:url(../imgs/icon/naver.png) no-repeat;}
+#appleid-signin-wrap{position:relative;}
+#appleid-signin-wrap::after{position:absolute; top:0; left:0; height:100%; width:100%; content:'';}
+
+/* sns 회원가입 */
+.snsjointype h3{font-size: 24px; color: #000; margin-bottom: 30px;}
+.snsjointype h3 span{width: 50px; height: 50px; display: inline-block; overflow: hidden; vertical-align: middle;}
+
+/* 입점업체 로그인 */
+.seller_login{padding:80px 0 50px}
+.seller_login .seller_login_box{position:relative;width:540px;height:298px;margin:0 auto 30px;padding:0 54px;border:1px solid #e5e5e5;background:#f4f4f4}
+.seller_login .seller_login_box:after{content:"";display:block;clear:both}
+.seller_login .seller_login_box h2{height:60px;padding:48px 0 0;text-align:center;font-size:20px;color:#616265;line-height:24px;font-weight:bold;}
+.seller_login .seller_login_box .line{min-width:1px;height:28px;margin:0 0 0 135px}
+.seller_login .seller_login_box .line:after{content:"";display:block;clear:both}
+.seller_login .seller_login_box .line label{float:left;margin:0;padding:0}
+.seller_login .seller_login_box .line label img{float:left}
+.seller_login .seller_login_box .line input{float:left;width:178px;height:20px;margin:0;padding:0;text-indent:10px;line-height:20px;border:1px solid #e5e5e5;border-top:1px solid #ccc;border-left:1px solid #ccc;background:white}
+.seller_login .seller_login_box button{position:absolute;top:108px;right:169px;width:73px;height:50px;margin:0;padding:0;border:none;background:none}
+.seller_login .seller_login_box .info{position:relative;float:left;width:100%;margin:34px 0 0;padding:25px 0 0;border-top:1px solid #cfcfcf}
+.seller_login .seller_login_box .info li{margin:0 9px;font-size:13px;color:#8e8e8e;line-height:20px;font-weight:bold;}
+.seller_login .seller_login_box .info a{position:absolute;top:27px}
+.seller_login .seller_login_box .info a img{display:block}
+.seller_login .mallinmall_box{position:relative;width:650px;margin:0 auto;background:#f9f9f9}
+.seller_login .mallinmall_box h2{position:absolute;top:27px;left:0;width:149px;padding:49px 0 0;text-align:center;font-size:15px;color:#444;font-weight:bold;background:url(../imgs/member/mallinmall_title.png) center 0 no-repeat}
+.seller_login .mallinmall_box p{margin:0 10px 0 158px;padding:33px 0 29px;font-size:13px;color:#8e8e8e;line-height:18px;font-weight:bold;}
+.seller_login .mallinmall_box p strong{display:block;padding:4px 0 0;color:#f17100}
+
+/* 회원가입 안내 */
+.welcome{width:100%; background:#f7f7f7;font-size:20px; color:#000; display:block;padding:28px 0;line-height:1; text-align:center;}
+.welcome span{font-size:16px; color:#666; display:block; margin-top:14px;}
+.join-benefit{display: flex; width: 660px; margin: 0 auto; flex-wrap: wrap; margin-top: 100px;}
+.join-benefit li{width: 50%;text-align: center;font-size: 16px;color: #000; margin-bottom: 60px; line-height: 24px;}
+.join-benefit li img{display: block;margin: 0 auto 16px;width: 90px;height: 90px;}
+
+
+
+

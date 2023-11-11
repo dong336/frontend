@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* inform box */
+.join_inform{margin-bottom:38px;padding:15px 20px;font-size:11px;color:#666;background:#f8f8f8;}
+
+/* guide */
+#mim_content{margin-bottom:20px;padding:15px 0;color:#666}
+
+ol.step{margin-left:-40px;margin-bottom:38px}
+ol.step:after{content:"";display:block;clear:both}
+ol.step li{position:relative;float:left;width:25%;padding-left:40px;box-sizing:border-box}
+ol.step li dl {border:3px solid #eaeaea;}
+ol.step li dt {padding:7px 17px;background:#eaeaea;color:#999;font-family:'verdana';font-size:12px;font-weight:bold;line-height:13px;}
+ol.step li dd {padding:23px 0;text-align:center;line-height:19px;}
+ol.step li.active dl {border:3px solid #444;}
+ol.step li.active dt {background:#444;color:#fff;}
+ol.step li.active dd {color:#444;font-size:16px;font-weight:bold;}
+ol.step li:before{content:"";position:absolute;top:50%;left:0;width:0;height:0;margin:-16px 0 0 12px;border:16px solid transparent;border-left:16px solid #eaeaea}
+ol.step li:first-child:before{display:none}
+
+/*신청폼관련 */
+div.box_guide{margin-bottom:12px;padding:9px 10px;border:1px solid #dbdbdb;border-top:1px solid #444;background-color:#f3f3f3}
+div.box_guide div{overflow-y:scroll;height:212px;padding:18px;border:1px solid #dbdbdb;background-color:#fff;line-height:18px;color:#666}
+div.box_guide div strong{color:#000}
+div.agree_check{margin-bottom:20px;font-size:13px;text-align:right}
+div.agree_check input{margin:0 0 0 18px}
+div.agree_check label{color:#666}
+.mallinmall_step{overflow:hidden;margin:20px 0 20px 22px}
+.mallinmall_step li{float:left}

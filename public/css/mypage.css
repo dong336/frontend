@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+/*---마이페이지 내 테이블은 commom.css에서 제어해줌 ---*/
+.middle_title {border-bottom:solid 1px #e1e1e1;padding-bottom:10px;}
+
+/* main */
+.my_quick{margin:0 -3px 0 0;}
+.my_quick ul{border-top:1px solid #444;}
+.my_quick ul:after{content:"";display:block;clear:both}
+.my_quick li{float:left;width:25%;height:181px;margin:0 -1px 0 0;box-sizing:border-box;border:1px solid #e1e1e1;border-top:none}
+.my_quick li a{display:block;padding:80px 0 0;text-align:center}
+.my_quick li a strong{display:block;margin-top:18px;font-size:15px;color:#333}
+.my_quick li a span{display:block;margin-top:8px;font-size:12px;line-height:16px}
+.my_quick li.modify{background:url(../imgs/mypage/img_modify.png) center 28px no-repeat}
+.my_quick li.cmoney{background:#f9f9f9 url(../imgs/mypage/img_cmoney.png) center 28px no-repeat}
+.my_quick li.coupon{background:url(../imgs/mypage/img_coupon.png) center 28px no-repeat}
+.my_quick li.inquiry{background:#f9f9f9 url(../imgs/mypage/img_inquiry.png) center 28px no-repeat}
+
+/* sns관련 */
+.snslogin{text-align:center;}
+.snslogin h3{font-weight:700; font-size:16px; text-align:center; color:#000; margin-bottom:20px;}
+.snslogin ul {display: inline-block;}
+.snslogin ul li {margin:0 8px;float: left;width: 50px;height: 50px;}
+.snslogin ul li a{display:block; width:50px; height:50px;}
+.snslogin ul li.kakao a{display:block; width:50px; height:50px;background:url('../imgs/icon/kakao.png') no-repeat;}
+.snslogin ul li.naver a{display:block; width:50px; height:50px;background:url('../imgs/icon/naver.png') no-repeat;}
+.snslogin ul li.google a{display:block; width:50px; height:50px;background:url('../imgs/icon/google.png') no-repeat;}
+.snslogin ul li.payco a{display:block; width:50px; height:50px;background:url('../imgs/icon/payco.png') no-repeat;}
+.snslogin ul li.apple a{display:block; width:50px; height:50px;background:url('../imgs/icon/apple.png') no-repeat;}
+.snslogin ul li.inactive a{display:block; width:50px; height:50px; background-position:0 -55px;}
+.snslogin .note{margin-top:20px;}
+
+/* sns 연결설정 */
+.sns_logo_NAVER span{width:40px; height:40px; display:block; background:url('../imgs/icon/naver.png') no-repeat; background-size:cover; text-indent:-9999px; margin:0 auto;}
+.sns_logo_KAKAO span{width:40px; height:40px; display:block; background:url('../imgs/icon/kakao.png') no-repeat; background-size:cover; text-indent:-9999px; margin:0 auto;}
+.sns_logo_APPLE span{width:40px; height:40px; display:block; background-color: #000; border-radius: 50%; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" style="overflow:visible" width="100%" height="100%" viewBox="6 6 44 44"><g fill="none" fill-rule="evenodd"><path fill="%23fff" fill-rule="nonzero" d="M28.2226562,20.3846154 C29.0546875,20.3846154 30.0976562,19.8048315 30.71875,19.0317864 C31.28125,18.3312142 31.6914062,17.352829 31.6914062,16.3744437 C31.6914062,16.2415766 31.6796875,16.1087095 31.65625,16 C30.7304687,16.0362365 29.6171875,16.640178 28.9492187,17.4494596 C28.421875,18.06548 27.9414062,19.0317864 27.9414062,20.0222505 C27.9414062,20.1671964 27.9648438,20.3121424 27.9765625,20.3604577 C28.0351562,20.3725366 28.1289062,20.3846154 28.2226562,20.3846154 Z M25.2929688,35 C26.4296875,35 26.9335938,34.214876 28.3515625,34.214876 C29.7929688,34.214876 30.109375,34.9758423 31.375,34.9758423 C32.6171875,34.9758423 33.4492188,33.792117 34.234375,32.6325493 C35.1132812,31.3038779 35.4765625,29.9993643 35.5,29.9389701 C35.4179688,29.9148125 33.0390625,28.9122695 33.0390625,26.0979021 C33.0390625,23.6579784 34.9140625,22.5588048 35.0195312,22.474253 C33.7773438,20.6382708 31.890625,20.5899555 31.375,20.5899555 C29.9804688,20.5899555 28.84375,21.4596313 28.1289062,21.4596313 C27.3554688,21.4596313 26.3359375,20.6382708 25.1289062,20.6382708 C22.8320312,20.6382708 20.5,22.5950413 20.5,26.2911634 C20.5,28.5861411 21.3671875,31.013986 22.4335938,32.5842339 C23.3476562,33.9129053 24.1445312,35 25.2929688,35 Z"></path></g></svg>');text-indent:-9999px; margin:0 auto;}
+
+/* 안내글 */
+.rounding_box{margin-bottom:30px;padding:20px 15px;border:solid 1px #e1e1e1}
+
+/* 주문/배송조회 */
+.order_tab{border-bottom:1px solid #ccc}
+.order_tab:after{content:"";display:block;clear:both}
+.order_tab li{float:left;margin:0 -1px -1px 0}
+.order_tab li a{display:block;width:199px;height:48px;text-align:center;font-size:14px;color:#666;line-height:49px;font-weight:bold;border:1px solid #eee;border-bottom:none;background:white}
+.order_tab li.on{position:relative}
+.order_tab li.on a{width:198px;padding:0 0 1px;color:#333;border:1px solid #ccc;border-bottom:none}
+
+.order_pro_percel{padding:5px;background:#f9f9f9;overflow:hidden;text-align:right;}
+.order_pro_percel .text {display:ilnine-block;vertical-align:top;line-height:22px;}
+.order_pro_percel .buttons {margin-left:8px;}  
+.history_info{padding:10px 0 0 10px;font-size:11px;color:#666;line-height:16px;background:url(../imgs/icon/bul_red_square.gif) 0 15px no-repeat}
+.history_info a{display:inline-block;position:relative;top:-1px;vertical-align:top}
+
+/* 주문할상품, 할인 및 배송비 */
+.order_ver tbody td .forIcon img{position:absolute;top:50%;right:0;width:25px;height:25px;margin:-13px -13px 0 0}
+.order_ver tbody .priceBig{font-size:13px}
+.order_ver tbody .priceBig span{vertical-align:-1px;font-size:16px;font-weight:bold;font-family:Tahoma !important}
+.order_ver tr.total_price td div span{font-size:12px;line-height:21px}
+.order_ver tr.total_price td div strong{width:200px;font-size:12px;line-height:21px}
+
+/* 회원탈퇴 */
+.secession_survay{position:relative;border:1px solid #dbdbdb;border-top:1px solid #444;margin-bottom:30px}
+.secession_survay h5{padding:10px 20px;font-size:13px;line-height:19px;background-color:#f3f3f3;border-bottom:1px solid #dbdbdb;color:#444}
+.secession_survay ul{overflow:hidden;width:480px;padding:20px 0 20px 25px}
+.secession_survay li{width:240px;float:left;margin-bottom:11px;color:#666}
+.secession_survay li input{margin:0 3px 0 0}
+.secession_survay li.etc{position:absolute;top:52px;right:50px}
+.secession_survay li textarea{width:265px;height:73px;margin-top:10px;background-color:#fafafa}
+.secession_survay p{overflow:hidden;width:auto;padding:20px 25px;color:#666;line-height:18px}
+
+/* 박스 */
+.gradient_box{margin-bottom:30px;padding:18px;line-height:25px;border:1px solid #eee;background:#fafafa}
+.gradient_box input{margin:0}
+.gradient_box label{margin:0 15px 0 5px}
+.gradient_box .calendar{width:25px;height:25px;padding:3px 4px 4px;box-sizing:border-box;vertical-align:top;border:1px solid #ccc;border-left:none;background:white}
+.gradient_box .calendar img{display:block}
+.gradient_box:after{content:"";display:block;clear:both}
+.order_num{font-size:14px;font-weight:bold;position:relative;color:#222;letter-spacing:-0.01em}
+.order_num a.btn{position:absolute;right:10px;top:10px}
+.cancel_result{line-height:200%;text-align:Center;color:#222;font-size:12px;letter-spacing:-0.01em}
+.cancel_result strong.big{font-size:16px;color:#000}
+
+/* 나의 적립금 */
+.cmoney_point{width:100%;border-top:1px solid #faa419;border-left:1px solid #faa419}
+.cmoney_point th{margin:0;padding:9px 0;text-align:center;font-size:14px;color:white;line-height:21px;font-weight:bold;border-bottom:1px solid #faa419;border-right:1px solid white;background:#faa419}
+.cmoney_point th:last-child{border-right:1px solid #faa419}
+.cmoney_point td{margin:0;padding:9px 0;text-align:center;font-size:14px;color:#5e5e5e;line-height:21px;font-weight:bold;border-bottom:1px solid #faa419;border-right:1px solid #faa419;background:white}
+.cmoney_point td a,
+.cmoney_point td img{vertical-align:top}
+.all_check_button{float:right;margin:-29px 0 0}
+.all_check_button img{float:left}
+
+/* 나의 쿠폰함 */
+.coupon_info{position:relative;min-width:1px;padding:14px 0 14px 183px;border:1px solid #e4e4e4;background:url(../imgs/mypage/bg_coupon_info.gif) 0 0 repeat-y}
+.coupon_info dt{position:absolute;top:50%;left:0;width:150px;margin:-24px 0 0;padding:30px 0 0;text-align:center;font-size:15px;color:#797979;line-height:20px;font-weight:bold;background:url(../imgs/mypage/coupon_info_title.png) center 0 no-repeat}
+.coupon_info dd{padding:3px 0;font-size:12px;color:#777;line-height:17px;font-weight:bold;}
+.coupon_image{overflow:hidden}
+.coupon_insert{position:relative;min-width:1px;border:3px solid #eee}
+.coupon_insert:after{content:"";display:block;clear:both}
+.coupon_insert .insert_box {width:328px;margin:0 auto;padding:30px 0;}
+.coupon_insert .insert_box  h6{padding:0 0 17px;text-align:center;font-size:17px;color:#5e5e5e;line-height:21px;font-weight:bold;}
+.coupon_insert .insert_box  input{float:left;width:74px;height:29px;margin:0 3px;padding:0;text-align:center;font-size:13px;line-height:29px;border:1px solid #c9c9c9;background:#fafafa}
+.coupon_insert .insert_box  button {float:left;width:74px;background:#666;color:#fff;text-align:center;height:31px;margin:0 3px;}
+.coupon_box{padding:33px 10px 32px;text-align:center;font-size:15px;color:#5e5e5e;line-height:19px;font-weight:bold;border:3px solid #ddd}
+.coupon_box strong{vertical-align:top;color:#ff6600}
+
+/* 주문취소 안내 */
+.claim_info{padding:0 20px 25px;border-bottom:solid 1px #ccc}
+div.cancel_box{background:#f4f4f4;padding:5px;margin-top:50px}
+div.cancel_box div.cancel_info{border:solid 1px #ccc;background:#fff;padding:30px}
+
+/*  환불계좌관리 */
+table td.refund_bank img{vertical-align:middle;margin-right:5px}
+
+.sec_box {margin:20px 0 40px; padding:30px 0; text-align:center; border:1px solid #efefef; background:#f3f5fa; overflow:hidden;}
+.sec_box dl dt {display:inline-block; vertical-align:top; margin:0 17px 0 0;line-height:25px}
+.sec_box dl dt label {vertical-align:top;font-weight:bold;color:#000}
+.sec_box dl dd {display:inline-block; vertical-align:top; text-align:left;}

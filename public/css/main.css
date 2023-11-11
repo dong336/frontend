@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+#main h3{font-family:roboto, "noto sans kr", sans-serif;}
+
+#container h3 {position: relative; font-size: 38px; color: #000; line-height: 49px; letter-spacing: -.025em}
+#container h3 .more-button {position: absolute; top: 12px; right: 0; overflow: hidden; width: 28px; height: 28px; text-indent: -9999px; background: url(../imgs/main/more-title.png) center center no-repeat}
+
+/* 메인 비주얼 */
+/* #container .main-visual{position:relative;float:left;clear:both;width:100%;margin:50px 0}
+#container .main-visual:after{content:"";display:block;clear:both}
+#container .main-visual .real{position:relative;z-index:2;width:62.25%;margin:34px 0 96px}
+#container .main-visual .real .stage{position:absolute;top:0;left:0;overflow:hidden;width:100%;height:100%}
+#container .main-visual .real .stage .item-list{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;background:white}
+#container .main-visual .real .stage .item-list:first-child{z-index:2}
+#container .main-visual .real .stage .item-list img{width:100%;height:100%;object-fit:cover}
+#container .main-visual .real .stage .item-list.active{z-index:3}
+#container .main-visual .real .frame{display:block;width:100%}
+#container .main-visual .fake{position:absolute;top:0;right:0;z-index:1;overflow:hidden;width:44.8%;height:100%}
+#container .main-visual .fake:after{content:"";position:absolute;top:0;left:0;z-index:3;width:100%;height:100%;opacity:.65;background:#f2f2f2}
+#container .main-visual .fake div{visibility:hidden;position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;background-color:black;background-size:cover;background-position:center center;background-repeat:no-repeat}
+#container .main-visual .fake div.active{z-index:2}
+#container .main-visual .count{position:absolute;bottom:59px;left:0;z-index:4;width:62.25%;text-align:right;font-size:16px;color:white;line-height:20px;font-weight:500;font-family:'Spoqa Han Sans Neo',sans-serif}
+#container .main-visual .count strong{color:#601986}
+#container .main-visual .indicator{position:absolute;bottom:36px;left:0;z-index:4;overflow:hidden;width:62.25%;height:4px}
+#container .main-visual .indicator ul{display:flex;position:relative;height:4px}
+#container .main-visual .indicator ul:before{content:"";position:absolute;top:0;left:0;z-index:2;height:4px;-moz-transition:width .6s;-webkit-transition:width .6s;transition:width .6s;background:#601986}
+#container .main-visual .indicator ul:after{content:"";display:block;clear:both}
+#container .main-visual .indicator ul li{flex-grow:1;flex-shrink:1;flex-basis:0;float:left;overflow:hidden;height:4px;text-indent:-9999px;background:#eee}
+#container .main-visual .indicator ul li button{position:relative;z-index:3;float:left;overflow:hidden;width:100%;height:4px;text-indent:-9999px}
+#container .main-visual .indicator ul li.active button{background:#601986}
+#container .main-visual .indicator.length1{display:none}
+#container .main-visual .indicator.length2 ul{display:block}
+#container .main-visual .indicator.length2 ul li{width:50%}
+#container .main-visual .indicator.length2 ul li.active button{background:none}
+#container .main-visual .indicator.length2 .active0:before{width:50%}
+#container .main-visual .indicator.length2 .active1:before{width:100%}
+#container .main-visual .indicator.length3 ul{display:block;margin:0 -1% 0 0}
+#container .main-visual .indicator.length3 ul li{width:33%}
+#container .main-visual .indicator.length3 ul li.active button{background:none}
+#container .main-visual .indicator.length3 .active0:before{width:33%}
+#container .main-visual .indicator.length3 .active1:before{width:66%}
+#container .main-visual .indicator.length3 .active2:before{width:99%}
+#container .main-visual .indicator.length4 ul{display:block}
+#container .main-visual .indicator.length4 ul li{width:25%}
+#container .main-visual .indicator.length4 ul li.active button{background:none}
+#container .main-visual .indicator.length4 .active0:before{width:25%}
+#container .main-visual .indicator.length4 .active1:before{width:50%}
+#container .main-visual .indicator.length4 .active2:before{width:75%}
+#container .main-visual .indicator.length4 .active3:before{width:100%}
+#container .main-visual .indicator.length5 ul{display:block}
+#container .main-visual .indicator.length5 ul li{width:20%}
+#container .main-visual .indicator.length5 ul li.active button{background:none}
+#container .main-visual .indicator.length5 .active0:before{width:20%}
+#container .main-visual .indicator.length5 .active1:before{width:40%}
+#container .main-visual .indicator.length5 .active2:before{width:60%}
+#container .main-visual .indicator.length5 .active3:before{width:80%}
+#container .main-visual .indicator.length5 .active4:before{width:100%}
+#container .main-visual .indicator.length6 ul{display:block;margin:0 -1% 0 0}
+#container .main-visual .indicator.length6 ul li{width:16.5%}
+#container .main-visual .indicator.length6 ul li.active button{background:none}
+#container .main-visual .indicator.length6 .active0:before{width:16.5%}
+#container .main-visual .indicator.length6 .active1:before{width:33%}
+#container .main-visual .indicator.length6 .active2:before{width:49.5%}
+#container .main-visual .indicator.length6 .active3:before{width:66%}
+#container .main-visual .indicator.length6 .active4:before{width:82.5%}
+#container .main-visual .indicator.length6 .active5:before{width:99%}
+#container .main-visual .indicator.length7 ul{display:block;margin:0 -2% 0 0}
+#container .main-visual .indicator.length7 ul li{width:14%}
+#container .main-visual .indicator.length7 ul li.active button{background:none}
+#container .main-visual .indicator.length7 .active0:before{width:14%}
+#container .main-visual .indicator.length7 .active1:before{width:28%}
+#container .main-visual .indicator.length7 .active2:before{width:42%}
+#container .main-visual .indicator.length7 .active3:before{width:56%}
+#container .main-visual .indicator.length7 .active4:before{width:70%}
+#container .main-visual .indicator.length7 .active5:before{width:84%}
+#container .main-visual .indicator.length7 .active6:before{width:98%}
+#container .main-visual .indicator.length8 ul{display:block}
+#container .main-visual .indicator.length8 ul li{width:12.5%}
+#container .main-visual .indicator.length8 ul li.active button{background:none}
+#container .main-visual .indicator.length8 .active0:before{width:12.5%}
+#container .main-visual .indicator.length8 .active1:before{width:25%}
+#container .main-visual .indicator.length8 .active2:before{width:37.5%}
+#container .main-visual .indicator.length8 .active3:before{width:50%}
+#container .main-visual .indicator.length8 .active4:before{width:62.5%}
+#container .main-visual .indicator.length8 .active5:before{width:75%}
+#container .main-visual .indicator.length8 .active6:before{width:87.5%}
+#container .main-visual .indicator.length8 .active7:before{width:100%}
+#container .main-visual .indicator.length9 ul{display:block;margin:0 -1% 0 0}
+#container .main-visual .indicator.length9 ul li{width:11%}
+#container .main-visual .indicator.length9 ul li.active button{background:none}
+#container .main-visual .indicator.length9 .active0:before{width:11%}
+#container .main-visual .indicator.length9 .active1:before{width:22%}
+#container .main-visual .indicator.length9 .active2:before{width:33%}
+#container .main-visual .indicator.length9 .active3:before{width:44%}
+#container .main-visual .indicator.length9 .active4:before{width:55%}
+#container .main-visual .indicator.length9 .active5:before{width:66%}
+#container .main-visual .indicator.length9 .active6:before{width:77%}
+#container .main-visual .indicator.length9 .active7:before{width:88%}
+#container .main-visual .indicator.length9 .active8:before{width:99%}
+#container .main-visual .indicator.length10 ul{display:block}
+#container .main-visual .indicator.length10 ul li{width:10%}
+#container .main-visual .indicator.length10 ul li.active button{background:none}
+#container .main-visual .indicator.length10 .active0:before{width:10%}
+#container .main-visual .indicator.length10 .active1:before{width:20%}
+#container .main-visual .indicator.length10 .active2:before{width:30%}
+#container .main-visual .indicator.length10 .active3:before{width:40%}
+#container .main-visual .indicator.length10 .active4:before{width:50%}
+#container .main-visual .indicator.length10 .active5:before{width:60%}
+#container .main-visual .indicator.length10 .active6:before{width:70%}
+#container .main-visual .indicator.length10 .active7:before{width:80%}
+#container .main-visual .indicator.length10 .active8:before{width:90%}
+#container .main-visual .indicator.length10 .active9:before{width:100%}
+#container .main-visual .prev-button{display:none;position:absolute;top:0;left:0;z-index:3;width:0;height:100%;box-sizing:border-box;border-top:34px solid transparent;border-bottom:96px solid transparent}
+#container .main-visual .prev-button button{position:absolute;top:0;left:0;overflow:hidden;width:60px;height:100%;text-indent:-9999px}
+#container .main-visual .prev-button button:after{content:"";position:absolute;top:50%;left:20px;width:26px;height:49px;margin:-25px 0 0;background:url(../imgs/global/prev1.png) 0 0 no-repeat}
+#container .main-visual .next-button{display:none;position:absolute;top:0;left:62.25%;z-index:3;width:0;height:100%;box-sizing:border-box;border-top:34px solid transparent;border-bottom:96px solid transparent}
+#container .main-visual .next-button button{position:absolute;top:0;left:-60px;overflow:hidden;width:60px;height:100%;text-indent:-9999px}
+#container .main-visual .next-button button:after{content:"";position:absolute;top:50%;right:20px;width:26px;height:49px;margin:-25px 0 0;background:url(../imgs/global/next1.png) 0 0 no-repeat} */
+
+
+#container .main-visual{position:relative;float:left;clear:both;width:100%;margin-bottom:60px}
+#container .main-visual .stage{position:relative;z-index:2;overflow:hidden;height:670px}
+#container .main-visual .stage .item-list{visibility:hidden;position:absolute;top:0;left:0;z-index:1;overflow:hidden;width:100%}
+#container .main-visual .stage .item-list img{display:block;position:relative;left:50%;z-index:1;width:100%;height:670px;max-width:1920px;-moz-transform:translateX(-50%);-webkit-transform:translateX(-50%);transform:translateX(-50%);object-fit:cover}
+#container .main-visual .brand-indicator{position:absolute;bottom:80px;left:50%;z-index:3;transform:translate(-50%,0)}
+#container .main-visual .indicator ul{width:400px;height:2px;overflow:hidden}
+#container .main-visual .indicator li{float:left;width:33.333%;line-height:0;height:2px}
+#container .main-visual .indicator li button{width:100%;height:2px;background:rgba(17,17,17,0.1);text-indent:-9999px}
+#container .main-visual .indicator li.active button{background:#000}
+#container .main-visual .pagination{position:absolute;top:20px;left:50%;transform:translate(-50%,0)}
+#container .main-visual .prev-button{width:20px;height:20px;top:0;left:0;right:auto;margin-top:0;text-indent:-9999px;position:absolute}
+#container .main-visual .prev-button:after{content:'';position:absolute;top:5px;left:7px;width:9px;height:9px;border-left:2px solid #111;border-bottom:2px solid #111;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+#container .main-visual .next-button{width:20px;height:20px;top:0;left:auto;right:0;margin-top:0;text-indent:-9999px;position:absolute}
+#container .main-visual .next-button:after{content:'';position:absolute;top:5px;right:7px;width:9px;height:9px;border-right:2px solid #111;border-bottom:2px solid #111;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
+#container .main-visual .count{width:100px;text-align:center;font-size:13px;color:#000}
+#container .main-visual .count strong{margin:0 5px 0 0}
+
+/* 브랜드 */
+#container .brand-focus{position:relative;float:left;clear:both;overflow:hidden;width:100%;margin:50px 0;text-align:center}
+#container .brand-focus .brandlist{margin:0}
+#container .brand-focus .brandlist ul{margin:0}
+#container .brand-focus .brandlist ul:after{content:"";display:block;clear:both}
+#container .brand-focus .brandlist ul li{display:none;float:left;width:9%;padding:10px;box-sizing:border-box}
+#container .brand-focus .brandlist ul li img{display:block;width:100%}
+#container .brand-focus .brandlist ul li:nth-child(1),#container .brand-focus .brandlist ul li:nth-child(2),#container .brand-focus .brandlist ul li:nth-child(3),#container .brand-focus .brandlist ul li:nth-child(4),#container .brand-focus .brandlist ul li:nth-child(5),#container .brand-focus .brandlist ul li:nth-child(6),#container .brand-focus .brandlist ul li:nth-child(7),#container .brand-focus .brandlist ul li:nth-child(8),#container .brand-focus .brandlist ul li:nth-child(9),#container .brand-focus .brandlist ul li:nth-child(10),#container .brand-focus .brandlist ul li:nth-child(11){display:block}
+
+/* 베스트 */
+#container .best-product{position:relative;float:left;clear:both;overflow:hidden;width:100%;margin:60px 0;height:550px}
+#container .best-product h3{float:none;width:100%;margin:-9px 0 0;padding:0 0 19px}
+#container .best-product .product-item{margin:-50px -9px 0;padding:6px 0 0}
+#container .best-product .product-item .list{margin:0 -1% 0 0}
+#container .best-product .product-item .list .item{width:16.5%;margin:50px 0 0;border-left:9px solid transparent;border-right:9px solid transparent}
+#container .best-product .product-item .list .item a .text{height:108px}
+#container .best-product .stage{margin:0 -24px}
+#container .best-product .stage:after{content:"";display:block;clear:both}
+#container .best-product .stage .item-list{display:inline;vertical-align:top}
+#container .best-product .stage .item-list .item-button{float:left;margin:0 6px 9px;padding:3px 18px 4px;font-size:20px;color:#666;line-height:24px}
+#container .best-product .stage .item-list:last-child .item-button{margin-bottom:19px}
+#container .best-product .stage .item-list .item-cont{position:absolute;bottom:0;left:0;z-index:1;width:100%;opacity:0;box-sizing:border-box;-moz-transition:opacity .4s;-webkit-transition:opacity .4s;transition:opacity .4s}
+#container .best-product .stage .item-list .item-cont .product-item{margin:0 -9px;padding:0}
+#container .best-product .stage .item-list .item-cont .product-item .list .item{margin:0}
+#container .best-product .stage .item-list.active .item-button{color:#601986;font-weight:700}
+#container .best-product .stage .item-list.active .item-cont{z-index:2;opacity:1}
+#container .best-product .frame{margin:0 -9px;padding:26px 0 0}
+#container .best-product .frame>div{margin:0 -1% 0 0}
+#container .best-product .frame>div>img{display:block;width:16.5%;padding:0 9px;box-sizing:border-box}
+#container .best-product .frame>div>span{display:block;height:138px}
+
+/* 신상품 */
+#container .new-product{position:relative;float:left;clear:both;overflow:hidden;width:100%;margin:60px 0}
+#container .new-product .item-cont{position:absolute;bottom:0;left:0;z-index:1;width:100%;box-sizing:border-box;-moz-transition:opacity .4s;-webkit-transition:opacity .4s;transition:opacity .4s}
+#container .new-product .item-cont .banner-item{position:absolute;top:0;left:0;overflow:hidden;width:45.3%;height:100%;box-sizing:border-box;border-right:40px solid transparent}
+#container .new-product .item-cont .banner-item img{width:100%;height:100%;object-fit:cover;border-radius:11px}
+#container .new-product .item-cont .product-item{float:right;width:calc(54.7% + 30px);margin:0 -15px}
+#container .new-product .item-cont .product-item .list{margin:0 -1% 0 0}
+#container .new-product .item-cont .product-item .list .item{width:33%;margin:0;border-left:15px solid transparent;border-right:15px solid transparent}
+#container .new-product .item-cont .product-item .list .item a .text{height:108px}
+#container .new-product .item-cont .b-frame{float:left;width:calc(54.7% + 30px);margin:0 0 0 -9999px}
+#container .new-product .item-cont .b-frame>div{margin:0 -1% 0 0}
+#container .new-product .item-cont .b-frame>div>img{display:block;width:33%;padding:0 15px;box-sizing:border-box}
+#container .new-product .item-cont .b-frame>div>span{display:block;height:138px}
+#container .new-product .frame{display:block;clear:both;width:54.7%;padding:20px 0 0}
+#container .new-product .frame>div{margin:0 -15px}
+#container .new-product .frame>div>div{margin:0 -1% 0 0}
+#container .new-product .frame>div>div>img{display:block;width:33%;padding:0 15px;box-sizing:border-box}
+#container .new-product .frame>div>div>span{display:block;height:138px}
+
+/* 추천상품 */
+#container .recommend-product{position:relative;float:left;clear:both;width:100%;margin:60px 0;box-sizing:border-box;border-top:65px solid transparent;border-right:60px solid transparent}
+#container .recommend-product h3{position:absolute;top:-74px;left:0;width:100%}
+#container .recommend-product .stage{position:relative;z-index:1}
+#container .recommend-product .stage .item-list{display:inline;vertical-align:top}
+#container .recommend-product .stage .item-list .item-cont{position:absolute;top:0;left:0;z-index:1;width:100%;opacity:0;transition:opacity .4s ease 0}
+#container .recommend-product .stage .item-list .item-cont .product-item{position:absolute;top:0;left:0;z-index:1;width:59.5%;padding:0 50px;box-sizing:border-box;border-top:60px solid transparent;border-bottom:242px solid transparent}
+#container .recommend-product .stage .item-list .item-cont .product-item::before{content:"";position:absolute;top:-60px;right:100%;z-index:2;width:9999px;height:100%;margin:0 -60px 0 0;padding:60px 0 242px;background:rgb(255,255,255)}
+#container .recommend-product .stage .item-list .item-cont .product-item::after{content:"";position:absolute;top:-60px;left:100%;z-index:2;width:9999px;height:100%;margin:0 0 0 -60px;padding:60px 0 242px;background:rgb(255,255,255)}
+#container .recommend-product .stage .item-list .item-cont .product-item .list{position:relative;z-index:1;margin:0 -1% 0 0}
+#container .recommend-product .stage .item-list .item-cont .product-item .list .item{display:none;position:absolute;top:0;width:33%;margin:0;border-left:10px solid transparent;border-right:10px solid transparent}
+#container .recommend-product .stage .item-list .item-cont .product-item .list .item .img{margin:0}
+#container .recommend-product .stage .item-list .item-cont .product-item .list .item .text{position:absolute;top:100%;left:0;width:100%;height:108px;margin:30px 0 0}
+#container .recommend-product .stage .item-list .item-cont .product-item .list .item.activei{position:relative}
+#container .recommend-product .stage .item-list .item-cont .product-item .prev-buttoni{display:none;position:absolute;top:0;left:0;z-index:3;overflow:hidden;width:60px;height:100%;box-sizing:border-box;text-indent:-9999px;border-right:2px solid transparent;background:url(../imgs/global/prev2.png) center center no-repeat}
+#container .recommend-product .stage .item-list .item-cont .product-item .next-buttoni{display:none;position:absolute;top:0;right:0;z-index:3;overflow:hidden;width:60px;height:100%;box-sizing:border-box;text-indent:-9999px;border-left:2px solid transparent;background:url(../imgs/global/next2.png) center center no-repeat}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori{position:absolute;bottom:-242px;left:0;z-index:3;width:100%;height:4px;padding:0 200px;box-sizing:border-box}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori ul{position:relative;height:4px}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori ul::before{content:"";position:absolute;top:0;left:0;z-index:2;height:4px;transition:width .6s ease 0;background:rgb(96,25,134)}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori ul::after{content:"";display:block;clear:both}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori ul li{float:left;overflow:hidden;height:4px;text-indent:-9999px;background:rgb(237,237,237)}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori ul li button{position:relative;z-index:3;float:left;overflow:hidden;width:100%;height:4px;text-indent:-9999px}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length1{display:none}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length2 ul li{width:50%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length2 .active0::before{width:50%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length2 .active1::before{width:100%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length3 ul{margin:0 -1% 0 0}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length3 ul li{width:33%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length3 .active0::before{width:33%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length3 .active1::before{width:66%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length3 .active2::before{width:99%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length4 ul li{width:25%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length4 .active0::before{width:25%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length4 .active1::before{width:50%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length4 .active2::before{width:75%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length4 .active3::before{width:100%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length5 ul li{width:20%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length5 .active0::before{width:20%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length5 .active1::before{width:40%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length5 .active2::before{width:60%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length5 .active3::before{width:80%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length5 .active4::before{width:100%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 ul{margin:0 -1% 0 0}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 ul li{width:16.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 .active0::before{width:16.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 .active1::before{width:33%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 .active2::before{width:49.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 .active3::before{width:66%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 .active4::before{width:82.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length6 .active5::before{width:99%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 ul{margin:0 -2% 0 0}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 ul li{width:14%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active0::before{width:14%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active1::before{width:28%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active2::before{width:42%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active3::before{width:56%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active4::before{width:70%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active5::before{width:84%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length7 .active6::before{width:98%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 ul li{width:12.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active0::before{width:12.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active1::before{width:25%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active2::before{width:37.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active3::before{width:50%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active4::before{width:62.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active5::before{width:75%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active6::before{width:87.5%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length8 .active7::before{width:100%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 ul{margin:0 -1% 0 0}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 ul li{width:11%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active0::before{width:11%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active1::before{width:22%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active2::before{width:33%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active3::before{width:44%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active4::before{width:55%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active5::before{width:66%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active6::before{width:77%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active7::before{width:88%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length9 .active8::before{width:99%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 ul li{width:10%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active0::before{width:10%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active1::before{width:20%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active2::before{width:30%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active3::before{width:40%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active4::before{width:50%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active5::before{width:60%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active6::before{width:70%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active7::before{width:80%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active8::before{width:90%}
+#container .recommend-product .stage .item-list .item-cont .product-item .indicatori.length10 .active9::before{width:100%}
+#container .recommend-product .stage .item-list .item-cont .banner-item{position:absolute;top:0;right:0;z-index:2;width:40.5%;height:100%;box-sizing:border-box;border-left:20px solid transparent;background:rgb(255,255,255)}
+#container .recommend-product .stage .item-list .item-cont .banner-item .img{position:absolute;top:0;left:0;overflow:hidden;width:100%;height:100%;border-radius:11px;background-size:cover;background-position:center center;background-repeat:no-repeat}
+#container .recommend-product .stage .item-list .item-cont .banner-item .img img{width:100%;height:100%;object-fit:cover}
+#container .recommend-product .stage .item-list .item-cont .b-frame{width:59.5%;padding:60px 50px 104px;box-sizing:border-box}
+#container .recommend-product .stage .item-list .item-cont .b-frame > div{margin:0 -1% 0 0}
+#container .recommend-product .stage .item-list .item-cont .b-frame > div > img{display:block;width:33%;padding:0 10px;box-sizing:border-box}
+#container .recommend-product .stage .item-list .item-cont .b-frame > div > span{display:block;height:138px}
+#container .recommend-product .stage .item-list.active .item-cont{position:relative;z-index:2;opacity:1}
+#container .recommend-product .indicator{position:absolute;bottom:34px;right:0;z-index:2;width:40.5%}
+#container .recommend-product .indicator ul{padding:0 0 0 20px;text-align:center;font-size:0}
+#container .recommend-product .indicator ul li{display:inline-block;margin:0 6px;vertical-align:top}
+#container .recommend-product .indicator ul li::after{content:"";display:block;clear:both}
+#container .recommend-product .indicator ul li button{float:left;width:22px;height:22px;padding:0 1px 0 0;box-sizing:border-box;text-align:center;font-size:16px;color:rgb(187,187,187);line-height:20px;font-family:"spoqa han sans neo",sans-serif;border-radius:100%}
+#container .recommend-product .indicator ul li.active button{color:rgb(255,255,255);background:rgb(96,25,134)}
+
+/* 띠배너 */
+#container .twin-banner{position:relative;float:left;clear:both;width:100%;margin:55px 0;box-sizing:border-box}
+#container .twin-banner .twin-banner-inner{width:1920px;position:relative;left:50%;margin-left:-960px;overflow:hidden}
+#container .twin-banner .stage{position:relative;z-index:1;margin:0;width:1920px}
+#container .twin-banner .stage:after{content:"";display:block;clear:both}
+#container .twin-banner .stage .item-list{display:none;position:absolute;top:0;float:left;box-sizing:border-box;max-width:960px;vertical-align:top}
+#container .twin-banner .stage .item-list a{display:inline-block;max-width:960px;vertical-align:top}
+#container .twin-banner .stage .item-list img{display:block;width:100%}
+#container .twin-banner .stage .item-list.active{position:relative}
+#container .twin-banner .prev-button{display:none;position:absolute;top:0;left:170px;z-index:3;overflow:hidden;width:66px;height:100%;text-indent:-9999px;background:url(../imgs/global/prev1.png) center center no-repeat}
+#container .twin-banner .next-button{display:none;position:absolute;top:0;right:170px;z-index:3;overflow:hidden;width:66px;height:100%;text-indent:-9999px;background:url(../imgs/global/next1.png) center center no-repeat}
+
+/* 동영상 */
+#container .video-section{position:relative;float:left;clear:both;width:100%;margin:60px 0;box-sizing:border-box;border-top:85px solid transparent;border-bottom:50px solid transparent;border-left:60px solid transparent;border-right:60px solid transparent}
+#container .video-section:before{content:"";position:absolute;top:0;right:100%;z-index:2;width:100%;height:100%;padding:0 0 110px;background:#fff}
+#container .video-section:after{content:"";position:absolute;top:0;left:100%;z-index:2;width:100%;height:100%;padding:0 0 110px;background:#fff}
+#container .video-section h3{position:absolute;top:-94px;left:-60px;width:100%;padding:0 120px 0 0}
+#container .video-section h3 img{display:inline-block;margin:-2px 7px 0 1px;vertical-align:middle}
+#container .video-section .stage{position:relative;z-index:1;margin:0 -15px}
+#container .video-section .stage:after{content:"";display:block;clear:both}
+#container .video-section .stage .item-list{display:none;position:absolute;top:0;width:50%;float:left;box-sizing:border-box;border-left:15px solid transparent;border-right:15px solid transparent}
+#container .video-section .stage .item-list .video{position:absolute;top:0;left:0;overflow:hidden;width:100%;height:100%;border-radius:11px;background:#fff}
+#container .video-section .stage .item-list .video iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+#container .video-section .stage .item-list .video embed{position:absolute;top:0;left:0;width:100%;height:100%}
+#container .video-section .stage .item-list .text{position:absolute;top:100%;left:0;width:100%;margin:21px 0 0}
+#container .video-section .stage .item-list .text span{display:block;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;text-align:center;font-size:22px;color:#0e0e0e;line-height:33px;font-weight:500}
+#container .video-section .stage .item-list img{display:block;width:100%}
+#container .video-section .stage .item-list.active{position:relative}
+#container .video-section .prev-button{display:none;position:absolute;top:0;left:-60px;z-index:3;overflow:hidden;width:60px;height:100%;text-indent:-9999px;background:url(../imgs/global/prev2.png) 0 center no-repeat}
+#container .video-section .next-button{display:none;position:absolute;top:0;right:-60px;z-index:3;overflow:hidden;width:60px;height:100%;text-indent:-9999px;background:url(../imgs/global/next2.png) right center no-repeat}

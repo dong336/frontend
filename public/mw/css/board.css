@@ -1,0 +1,154 @@
+@charset "utf-8";
+.board_page .blind{visibility:hidden;position:absolute;top:-9999px;width:0;height:0;padding:0}
+
+.board_page{background:#f4f4f4; padding:20px;}
+.board_page h2{position:relative;margin:0 5px 8px;padding:10px 0 0;text-align:center;font-size:1.4em;letter-spacing:-0.1em;color:#222}
+
+/* 게시판 Total */
+.board_total{position:relative;min-width:1px;padding:10px 0 10px 115px}
+.board_total:after{content:"";display:block;clear:both}
+.board_total select{position:absolute;top:10px;left:0;float:left;width:100px;height:32px;margin:0;padding:0;-webkit-appearance:none;text-indent:5px;font-size:14px;color:#303437;line-height:32px;border:1px solid #d2d3d7;border-radius:0;background:white url(../imgs/global/select_bg.gif) right center no-repeat;background-size:35px 34px}
+.board_total p{float:right;height:32px;font-size:12px;color:#444;line-height:32px}
+.board_total p.admin{clear:both}
+.board_total p.admin input{width:13px;height:13px;margin:0 5px 0 0;padding:0;vertical-align:middle}
+
+.adminSelect{margin:0 10px 4px;font-size:12px;color:#444;line-height:16px}
+.adminSelect input[type=checkbox]{position:relative;top:1px;width:13px;height:13px;margin:0 5px 0 0;padding:0;vertical-align:top}
+
+/* 일반형 리스트 */
+.board_page .default{width:100%;margin:0}
+.board_page .default th{padding:8px 6px;white-space:nowrap;text-align:center;font-size:12px;color:white;line-height:16px;border-top:1px solid black;border-bottom:1px solid black;background:#444}
+.board_page .default td{padding:8px 6px;white-space:nowrap;text-align:center;font-size:12px;color:#444;line-height:16px;border-bottom:1px solid #ccc}
+.board_page .default th.noneW{width:40%}
+.board_page .default td.noneW{width:100%;white-space:normal;text-align:left}
+.board_page .default td.noneW img{position:relative;top:1px;height:13px;vertical-align:top}
+.board_page .default td.name p{text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;max-width:56px;white-space:nowrap}
+.board_page .default th:first-child,
+.board_page .default td:first-child{padding-left:10px}
+.board_page .default th:last-child,
+.board_page .default td:last-child{padding-right:10px}
+.board_page .default input{width:13px;height:13px;margin:0;padding:0;vertical-align:middle}
+.board_page .default .admin td{background:#ffffdb}
+.board_page .default .black td{border-top:1px solid black}
+
+@media (min-width: 280px) and (max-width: 360px){
+	.board_page .default col:last-child, .board_page .default th:last-child, .board_page .default td:last-child{display:none;}
+	.board_page .default th.noneW{width:54%}
+}
+
+/* 앨범형 리스트 */
+.board_page .album{min-width:1px;margin:0 -3px;padding:4px 0 0}
+.board_page .album:after{content:"";display:block;clear:both}
+.board_page .album li{position:relative;float:left;width:50%;padding:6px 0 0}
+.board_page .album li a{display:block;margin:0 3px;padding:0 0 8px;box-shadow:2px 2px 0 #eae6e6;background:white}
+.board_page .album li a:after{content:"";display:block;clear:both}
+.board_page .album li a .img{position:relative;overflow:hidden;width:100%;margin:0 0 7px}
+.board_page .album li a .img img{position:absolute;top:0;left:0;width:100%;height:100%}
+.board_page .album li a .img .dummy{display:block;position:static;width:100%}
+.board_page .album li a .title{overflow:hidden;height:32px;margin:0 6px;word-wrap:break-word;font-size:13px;color:#444;line-height:16px}
+.board_page .album li a .title img{position:relative;top:-1px;height:13px}
+.board_page .album li input[type=checkbox]{width:13px;height:13px;margin:0 0 0 3px;padding:0;vertical-align:top}
+.board_page .album li.none{float:none;width:auto;margin:6px 3px 0;padding:16px 0;text-align:center;font-size:12px;color:#444;line-height:16px;background:white}
+
+/* 웹진형 리스트 */
+.board_page .webzine{padding:4px 0 0}
+.board_page .webzine li{position:relative;padding:6px 0 0}
+.board_page .webzine li a{display:block;position:relative;min-width:1px;height:93px;padding:7px 10px 0 110px;box-shadow:2px 2px 0 #eae6e6;background:white}
+.board_page .webzine li a .img{position:absolute;top:0;left:0;width:100px;height:100px;}
+.board_page .webzine li a .img img{position:absolute;top:0;left:0;width:100%;height:100%}
+.board_page .webzine li a .title{overflow:hidden;height:32px;margin:0 0 4px;word-wrap:break-word;font-size:13px;color:#444;line-height:16px}
+.board_page .webzine li a .title img{position:relative;top:-1px;height:13px}
+.board_page .webzine li a .text{overflow:hidden;height:32px;margin:0 0 3px;word-wrap:break-word;font-size:12px;color:#444;line-height:16px}
+.board_page .webzine li a .util{font-size:12px;color:#444;line-height:16px}
+.board_page .webzine li input[type=checkbox]{width:13px;height:13px;margin:0;padding:0;vertical-align:top}
+.board_page .webzine li.none{margin:6px 0 0;padding:16px 0;text-align:center;font-size:12px;color:#444;line-height:16px;background:white}
+
+/* 상세 */
+.view{width:100%;margin:0;border-top:1px solid black}
+.view>tbody>tr>th{padding:10px;white-space:nowrap;text-align:left;font-size:12px;color:white;line-height:16px;border-bottom:1px solid #ccc;background:#444}
+.view>tbody>tr>td{padding:10px;text-align:left;font-size:12px;color:#444;line-height:16px;border-bottom:1px solid #ccc}
+.boardContents{padding:10px;word-wrap:break-word;background:white}
+.boardContents .writer_ip{text-align:right;font-size:11px}
+.view>tbody>tr.black>th,
+.view>tbody>tr.black>td,
+.view>tbody>tr:last-child>th,
+.view>tbody>tr:last-child>td{border-bottom:1px solid black}
+.view>tbody>tr>td input[type=text],
+.view>tbody>tr>td input[type=password]{float:left;width:100%;height:26px;margin:0;padding:0;box-sizing:border-box;-webkit-appearance:none;text-indent:5px;font-size:12px;color:#303437;line-height:26px;border:1px solid #d2d3d7;border-radius:0;background:white}
+.view>tbody>tr>td input[type=checkbox]{position:relative;top:1px;width:13px;height:13px;margin:0 5px 0 0;padding:0;vertical-align:top}
+.view>tbody>tr>td input[type=file]{width:100%}
+.view>tbody>tr>td select{float:left;width:100%;height:26px;margin:0;padding:0;-webkit-appearance:none;text-indent:5px;font-size:12px;color:#303437;line-height:26px;border:1px solid #d2d3d7;border-radius:0;background:white url(../imgs/global/select_bg.gif) right center no-repeat;background-size:35px 34px}
+.view>tbody>tr>td .fileButton{width:100%;padding:2px 0 0}
+.view>tbody>tr>td .fileButton:after{content:"";display:block;clear:both}
+.view>tbody>tr>td .fileButton button{float:left;width:42px;height:20px;margin:0 5px 0 0;padding:0;border:1px solid #d2d3d7;border-radius:3px;background:none}
+.view>tbody>tr>td .fileButton button span{display:block;height:16px;text-align:center;font-size:11px;color:#666;line-height:16px;border:1px solid white;border-radius:3px;background:linear-gradient(to bottom,white 25%,#e6e6e6 50%,white 100%)}
+.view>tbody>tr>td .fileList{width:100%}
+.view>tbody>tr>td .fileList li{position:relative;min-width:1px;padding:5px 0 0 18px}
+.view>tbody>tr>td .fileList li input[type=checkbox]{position:absolute;top:11px;left:0;width:13px;height:13px;margin:0;padding:0}
+.view>tbody>tr>td .fileList li:after{content:"";display:block;clear:both}
+.view>tbody>tr>td .secret{clear:both;padding:4px 0 0}
+.view>tbody>tr>td .note{clear:both;padding:0 0 2px;font-size:11px;line-height:14px}
+.view>tbody>tr>td textarea{display:block;margin:0;padding:8px 10px;resize:none;box-sizing:border-box;-webkit-appearance:none;font-size:12px;color:#303437;line-height:18px;border:1px solid #d2d3d7;border-radius:0;background:white}
+.view>tbody>tr>.anti_spam img{display:block;width:100%;box-sizing:border-box;border:1px solid #ccc}
+.view>tbody>tr>.anti_spam p{padding:2px 0 4px}
+.view>tbody>tr>.anti_spam a{clear:both;float:left;margin:2px 0 0;text-decoration:underline}
+.view>tbody>tr.another>th,
+.view>tbody>tr.another>td{padding:5px 10px}
+
+/* 이전글,다음글 */
+.boardNav{clear:both;width:100%;border-bottom:1px solid black}
+.boardNav li{position:relative;height:32px;font-size:12px;color:#999;line-height:32px}
+.boardNav li:first-child{border-bottom:1px solid #ccc}
+.boardNav li a{display:block;position:relative;height:32px;color:#999}
+.boardNav li .ntitle{position:absolute;top:0;left:10px}
+.boardNav li .ntext{display:block;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;margin-right:10px;white-space:nowrap;}
+.boardNav li a .ntext{color:black}
+
+/* 게시판 버튼*/
+.board_button{clear:both;min-width:1px;}
+.board_button:after{content:"";display:block;clear:both}
+.board_button a,
+.board_button button{vertical-align:top;background: #444; border: 1px solid #444; color: #fff; font-size: 13px; padding: 4px 10px;}
+.board_button .control{position:relative;min-width:1px;padding:10px 122px 0 0}
+.board_button .control select{width:100%;height:32px;margin:0;padding:0;-webkit-appearance:none;text-indent:5px;font-size:14px;color:#303437;line-height:32px;border:1px solid #d2d3d7;border-radius:0;background:white url(../imgs/global/select_bg.gif) right center no-repeat;background-size:35px 34px}
+.board_button .control .btn_moveBoard{position:absolute;top:10px;right:61px}
+.board_button .control .btn_copyBoard{position:absolute;top:10px;right:0;}
+.board_button .ltb{float:left;padding:10px 0 0}
+.board_button .ltb a,.board_button .ltb button{margin:0 5px 0 0; background: #444; border: 1px solid #444; color: #fff; font-size: 13px; padding: 4px 10px; float: left;}
+.board_button .rtb{float:right;padding:10px 0 0}
+.board_button .rtb a,.board_button .rtb button{margin:0 0 0 5px; background: #444; border: 1px solid #444; color: #fff; font-size: 13px; padding: 4px 10px; float: right;}
+.board_button .ctb{padding:10px 0 0;text-align:center}
+.board_button .ctb a,.board_button .ctb button{margin:0 1px 0 2px}
+
+/* 게시판 검색 */
+.board_search{position:relative;min-width:1px;padding:10px 71px 10px 105px;border:1px solid #ccc;border-left:none;border-right:none; margin-top:20px;}
+.board_search:after{content:"";display:block;clear:both}
+.board_search select{position:absolute;top:10px;left:10px;float:left;width:90px;height:32px;margin:0;padding:0;-webkit-appearance:none;text-indent:5px;font-size:14px;color:#303437;line-height:32px;border:1px solid #d2d3d7;border-radius:0;background:white url(../imgs/global/select_bg.gif) right center no-repeat;background-size:35px 34px}
+.board_search button{position:absolute;top:10px;right:10px;background: #444; border: 1px solid #444; color: #fff; font-size: 13px; padding: 5px 15px;}
+.board_search input{float:left;width:100%;height:32px;margin:0;padding:0;box-sizing:border-box;-webkit-appearance:none;text-indent:5px;font-size:14px;color:#303437;line-height:32px;border:1px solid #d2d3d7;border-radius:0;background:white}
+
+/* 짧은 의견 */
+.comment{min-width:1px;padding:10px 0 0}
+.comment:after{content:"";display:block;clear:both}
+.comment table.write{width:100%;margin:0}
+.comment table.write th{padding:0 10px 10px 0;white-space:nowrap;font-size:12px;color:#444;line-height:26px;border:none}
+.comment table.write td{width:80%;padding:0 0 10px;border:none}
+.comment table.write td input[type=text],
+.comment table.write td input[type=password]{float:left;width:100%;height:26px;margin:0;padding:0;box-sizing:border-box;-webkit-appearance:none;text-indent:5px;font-size:12px;color:#303437;line-height:26px;border:1px solid #d2d3d7;border-radius:0;background:white}
+.comment table.write td .emoticonList{min-width:1px;margin:0 -16px 0 0}
+.comment table.write td .emoticonList:after{content:"";display:block;clear:both}
+.comment table.write td .emoticonList li{float:left;height:26px;margin:0 16px 0 0}
+.comment table.write td .emoticonList li input{float:left;width:13px;height:13px;margin:7px 3px 0 0;padding:0;border-radius:100px;-webkit-border-radius:100px}
+.comment table.write td .emoticonList li img{float:left;height:18px;margin:4px 0 0}
+.comment .writeButton{width: 100%; height: 32px; margin: 0; padding: 0; background: #a7a7a7; color: #fff;}
+.comment .writeButton span{display: block; overflow: hidden; line-height: 32px;}
+.comment table.list{width:100%;margin:0}
+.comment table.list td{padding:8px 0;font-size:12px;color:#666;line-height:16px;border-bottom:1px solid #ccc}
+.comment table.list td img{display:block}
+.comment table.list .icon img{width:19px;max-width:19px}
+.comment table.list .name{padding:8px 10px;white-space:nowrap}
+.comment table.list .name p{text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;max-width:56px;white-space:nowrap}
+.comment table.list .cont{width:100%;padding:8px 10px 8px 0}
+.comment table.list td button{vertical-align:-2px}
+.comment table.list td button img{width:13px;max-width:13px}
+.comment .no_comment{float:left;width:100%;margin:10px 0 0;padding:16px 0;text-align:center;font-size:12px;color:#666;line-height:16px;background:white}

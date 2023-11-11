@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Color Picker</title>
+
+<style type="text/css">
+body { margin:0; }
+
+#contain { padding:2px 2px 0 2px; border:1px solid #CCC; background:#EFE7E7; _width:206px; }
+#contain .body { overflow:hidden; padding:5px; background:#FFF; }
+
+#base table { width:198px; border:1px solid #CCC; }
+#base table tr { height:7px; }
+#base table td { width:10%; cursor:pointer; }
+
+#form { padding:3px 0 5px 0; }
+#form table { width:198px; }
+#form .color1 { border:1px solid #CCC; padding:1px; width:87px; }
+#form .color1 img { border:1px solid #CCC; background-color:#FFF; }
+#form input { width:57px; height:16px; border:1px solid #CCC; font-size:11px; margin:0; padding:0; }
+
+#SV { position:relative; border:1px solid #AAA; background:#FF0000 url('./images/SatVal.png'); _background:#FF0000; cursor:crosshair; float:left; height:166px; width:167px; margin-right:8px; -moz-user-select:none; -khtml-user-select:none; user-select:none; }
+#SVslide { position:absolute; background:url('./images/slide.gif'); height:9px; width:9px; _font-size:1px; line-height:1px; }
+
+#H { position:relative; border:1px solid #AAA; cursor:crosshair; float:left; width:18px; padding:0; -moz-user-select:none; -khtml-user-select:none; user-select:none; }
+#Hslide { position:absolute; background:url('./images/slideHue.gif'); width:26px; height:5px; line-height:1px; _font-size:1px; }
+#Hmodel { position:relative; }
+#Hmodel div { height:1px; width:18px; font-size:1px; line-height:1px; margin:0; padding:0; }
+
+#copy { text-align:right; }
+#copy .content { font-family:tahoma; font-size:11px; margin-right:3px; color:#555; }
+</style>
+
+<!--[if lte IE 6]>
+<style type="text/css">
+#SV { filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/SatVal.png', sizingMethod='scale'); }
+</style>
+<![endif]-->
+
+<script type="text/javascript">
+var isMSIE = (navigator.userAgent.toLowerCase().indexOf("msie") != -1);
+var stdBody = (document.documentElement || document.body);
+function $(v) { return(document.getElementById(v)); }
+function $S(v) { return($(v).style); }
+function browser(v) { return(Math.max(navigator.userAgent.toLowerCase().indexOf(v),0)); }
+function toggle(v) { $S(v).display=($S(v).display=='none'?'block':'none'); }
+function within(v,a,z) { return((v>=a && v<=z)?true:false); }
+function XY(e,v) { var z=browser('msie')?Array(event.clientX+stdBody.scrollLeft,event.clientY+stdBody.scrollTop):Array(e.pageX,e.pageY); return(z[zero(v)]); }
+function zero(v) { v=parseInt(v); return(!isNaN(v)?v:0); }
+
+/* PLUGIN */
+var maxValue={'h':'359','s':'100','v':'100'},HSV={0:359,1:100,2:100};
+var SVHeight=165,wSV=162,wH=162,slideHSV={0:359,1:100,2:100},stop=1;
+
+function HSVslide(d,o,e) {
+	function tXY(e) { tY=XY(e,1)-top; tX=XY(e)-left; }
+	function mkHSV(a,b,c) { return(Math.min(a,Math.max(0,Math.ceil((parseInt(c)/b)*a)))); }
+	function ckHSV(a,b) { if(within(a,0,b)) return(a); else if(a>b) return(b); else if(a<0) return 0; }
+	function drag(e) {
+		var eleft, etop;
+		if(!stop) {
+			if(d=='SVslide') {
+				tXY(e); eleft=ckHSV(tX,166); etop=ckHSV(tY-2,165);
+				slideHSV[1]=mkHSV(100,wSV,eleft); slideHSV[2]=100-mkHSV(100,wSV,etop); HSVupdate();
+				ds.left=(eleft-4)+'px'; ds.top=(etop-4)+'px';
+			}
+			else if(d=='Hslide') {
+				tXY(e); etop=(ckHSV(tY-2,SVHeight)); slideHSV[0]=mkHSV(359,wH,etop); ds.top=(etop-2)+'px';
+				function commit() {
+					var r='hsv',z={},j='';
+					for(var i=0; i<=r.length-1; i++) { j=r.substr(i,1); z[i]=(j=='h')?maxValue[j]-mkHSV(maxValue[j],wH,ds.top):HSV[i]; }
+					return(HSVupdate(hsv2hex(z)));
+				}
+
+				setColorPicker(commit());
+				$S('SV').backgroundColor='#'+hsv2hex(Array(HSV[0],100,100));
+			}
+		}
+
+		if (e && e.preventDefault)
+			e.preventDefault();
+		else
+			return false;
+	}
+
+	if(stop) {
+		stop=''; var ds=$S(d);
+		var left = 9, top = (isMSIE ? 118 : 116), tX, tY;
+		if(d=='SVslide') slideHSV[0]=HSV[0];
+		document.onmousemove=drag; document.onmouseup=function(){ stop=1; document.onmousemove=''; document.onmouseup=''; }; drag(e);
+	}
+}
+
+function HSVupdate(v) {
+	HSV=v?hex2hsv(v):Array(slideHSV[0],slideHSV[1],slideHSV[2]);
+	if(!v) v=hsv2hex(Array(slideHSV[0],slideHSV[1],slideHSV[2]));
+	setColorPicker(v);
+	return(v);
+}
+
+function loadH() {
+	var z=''; for(var i=SVHeight; i>=0; i--) z+="<div style=\"background:#"+hsv2hex(Array(Math.round((359/SVHeight)*i),100,100))+";\"><br /><\/div>";
+	$('Hmodel').innerHTML=z;
+}
+
+function initColorPicker(v) {
+	HSV=hex2hsv(v);
+	$S('SV').backgroundColor='#'+hsv2hex(Array(HSV[0],100,100));
+	$S('SVslide').top=(parseInt(wSV-wSV*(HSV[2]/100))-4)+'px'; $S('SVslide').left=parseInt(wSV*(HSV[1]/100))+'px';
+	$S('Hslide').top=(parseInt(SVHeight*((maxValue['h']-HSV[0])/maxValue['h']))-2)+'px';
+}
+
+/* CONVERSIONS */
+function toHex(v) { v=Math.round(Math.min(Math.max(0,v),255)); return("0123456789ABCDEF".charAt((v-v%16)/16)+"0123456789ABCDEF".charAt(v%16)); }
+function hex2rgb(r) { return({0:parseInt(r.substr(0,2),16),1:parseInt(r.substr(2,2),16),2:parseInt(r.substr(4,2),16)}); }
+function rgb2hex(r) { return(toHex(r[0])+toHex(r[1])+toHex(r[2])); }
+function hsv2hex(h) { return(rgb2hex(hsv2rgb(h))); }
+function hex2hsv(v) { return(rgb2hsv(hex2rgb(v))); }
+
+function rgb2hsv(r) { // easyrgb.com/math.php?MATH=M20#text20
+	var max=Math.max(r[0],r[1],r[2]),delta=max-Math.min(r[0],r[1],r[2]),H,S,V;
+
+	if (max!=0) {
+		S=Math.round(delta/max*100);
+		if(r[0]==max) H=(r[1]-r[2])/delta; else if(r[1]==max) H=2+(r[2]-r[0])/delta; else if(r[2]==max) H=4+(r[0]-r[1])/delta;
+		var H=Math.min(Math.round(H*60),360); if(H<0) H+=360;
+	}
+
+	return({0:H?H:0,1:S?S:0,2:Math.round((max/255)*100)});
+}
+
+function hsv2rgb(r) { // easyrgb.com/math.php?MATH=M21#text21
+	var R,B,G,S=r[1]/100,V=r[2]/100,H=r[0]/360;
+	if(S>0) {
+		if(H>=1) H=0;
+		H=6*H; F=H-Math.floor(H);
+		A=Math.round(255*V*(1.0-S));
+		B=Math.round(255*V*(1.0-(S*F)));
+		C=Math.round(255*V*(1.0-(S*(1.0-F))));
+		V=Math.round(255*V);
+
+		switch(Math.floor(H)) {
+			case 0: R=V; G=C; B=A; break;
+			case 1: R=B; G=V; B=A; break;
+			case 2: R=A; G=V; B=C; break;
+			case 3: R=A; G=B; B=V; break;
+			case 4: R=C; G=A; B=V; break;
+			case 5: R=V; G=A; B=B; break;
+		}
+
+		return({0:R?R:0,1:G?G:0,2:B?B:0});
+	}
+	else return({0:(V=Math.round(V*255)),1:V,2:V});
+}
+
+function setColorPicker(value) {
+	var code = value.toUpperCase(); if (code.substr(0, 1) != '#') code = '#'+code;
+	$S('colorBox').background = code; $('colorCode').value = code;
+}
+
+function setColorSwatches(value) {
+	setColor(value);
+}
+
+function setColor(value) {
+	var color = (typeof value != "undefined") ? value : $('colorCode').value;
+	if (color.replace(/ /g, '') == '') {
+		alert('색상값을 입력해 주세요.');
+		return false;
+	}
+
+	if (!isColor(color)) {
+		alert('올바르지 않는 색상값입니다.');
+		return false;
+	}
+
+	$('colorCode').value = color;
+	parent.colorpicker.pick(color);
+}
+
+function isColor(value) {
+	try {
+		if (value.substr(0, 1) != '#') value = '#'+value;
+		$S('colorBox').background = value;
+		return ($S('colorBox').background != '');
+	}
+	catch(e) {
+		return false;
+	}
+}
+</script>
+
+</head>
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+
+<div id="contain">
+	<div class="body">
+		<div id="base">
+			<table cellpadding="0" cellspacing="1" border="0">
+			<tr>
+				<td bgColor="#FFFFFF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#E5E4E4" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#D9D8D8" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C0BDBD" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#A7A4A4" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#8E8A8B" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#827E7F" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#767173" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#5C585A" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#000000" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#FEFCDF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FEF4C4" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FEED9B" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FEE573" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FFED43" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F6CC0B" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#E0B800" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C9A601" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#AD8E00" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#8C7301" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#FFDED3" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FFC4B0" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF9D7D" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF7A4E" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF6600" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#E95D00" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#D15502" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#BA4B01" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#A44201" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#8D3901" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#FFD2D0" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FFBAB7" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FE9A95" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF7A73" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF483F" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FE2419" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F10B00" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#D40A00" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#940000" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#6D201B" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#FFDAED" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FFB7DC" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FFA1D1" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF84C3" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FF57AC" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FD1289" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#EC0078" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#D6006D" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#BB005F" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#9B014F" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#FCD6FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#FBBCFF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F9A1FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F784FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F564FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F546FF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#F328FF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#D801E5" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C001CB" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#8F0197" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#E2F0FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C7E2FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#ADD5FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#92C7FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#6EB5FF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#48A2FF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#2690FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#0162F4" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#013ADD" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#0021B0" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#D3FDFF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#ACFAFD" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#7CFAFF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#4AF7FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#1DE6FE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#01DEFF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#00CDEC" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#01B6DE" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#00A0C2" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#0084A0" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#EDFFCF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#DFFEAA" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#D1FD88" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#BEFA5A" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#A8F32A" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#8FD80A" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#79C101" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#3FA701" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#307F00" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#156200" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			<tr>
+				<td bgColor="#D4C89F" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#DAAD88" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C49578" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C2877E" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#AC8295" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#C0A5C4" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#969AC2" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#92B7D7" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#80ADAF" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+				<td bgColor="#9CA53B" onMouseOver="setColorPicker(this.bgColor)" onClick="setColorSwatches(this.bgColor)"></td>
+			</tr>
+			</TABLE>
+		</div>
+
+		<div id="form">
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td style="width:94px;"><div class="color1"><img id="colorBox" src="./images/blank.gif" width="85" height="12"></div></td>
+				<td style="width:62px;"><input type="text" id="colorCode" value="#FFFFFF"></td>
+				<td><img src="./images/btn_choice.gif" width="42" height="18" onClick="setColor()" style="cursor:pointer;"></td>
+			</tr>
+			</table>
+		</div>
+
+		<div>
+			<div id="SV" onmousedown="HSVslide('SVslide','contain',event)" onmouseup="stop=0; setTimeout('stop=1',100);">
+				<div id="SVslide" style="top:-4px; left:-4px;"><br /></div>
+			</div>
+
+			<div id="H" onmousedown="HSVslide('Hslide','contain',event)" onmouseup="stop=0; setTimeout('stop=1',100);">
+				<div id="Hslide" style="left:-4px;"><br /></div>
+				<div id="Hmodel"></div>
+			</div>
+		</div>
+	</div>
+	<div id="copy">
+		<div class="content">ColorPicker v2.0</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+loadH(); initColorPicker('FF0000');
+</script>
+
+</body>
+</html>

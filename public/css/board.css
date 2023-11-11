@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+input.txt{
+	height:19px;
+	margin:0;padding:2px 0;
+	vertical-align:top;
+	font-size:13px;
+	font-family:'Noto Sans KR',sans-serif;
+	border:1px solid #ccc;
+	background-color:#fff;
+	line-height:19px;text-indent:5px
+}
+.smallbutton{display:inline-block;position:relative;margin:0;padding:2px 8px;vertical-align:top;text-align:center;font-size:12px;color:white;line-height:19px;font-weight:normal;border:1px solid black;background:#444}
+
+/* 게시판 Total */
+.board_total{overflow:hidden;margin:10px 0 0}
+.board_total select{float:left}
+.board_total p{float:right;margin:4px 0 0}
+.board_total p.admin{margin-right:20px}
+
+/* 게시판 목록 */
+.board_list_ver{border-collapse:collapse;width:100%;margin:10px 0 0;border-top:1px solid #444;table-layout:fixed}
+.board_list_ver thead{background:#f3f3f3;border-bottom:solid 1px #dbdbdb}
+.board_list_ver thead th{text-align:center;font-weight:normal;padding:10px 0;font-size:13px;color:#444;line-height:19px}
+.board_list_ver tbody td{text-align:center;padding:10px 0;font-size:13px;color:#666;line-height:19px;border-bottom:solid 1px #dbdbdb}
+.board_list_ver tbody td.title{text-align:left;padding:10px}
+.board_list_ver tbody td.none{color:#999;padding:30px 0}
+.board_list_ver tbody td img{vertical-align:middle}
+	/*관리자공지글*/
+.board_list_ver tbody tr.admin{background:#ffffdb}
+.board_list_ver tbody tr.admin td, .board_list_ver tbody tr.admin td a{color:#000}
+	/*숨김글*/
+.board_list_ver tbody tr.hidden{filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;background:#eee}
+/*웹진 목록 */
+.board_list_ver tbody td.summary{text-align:left;vertical-align:top;padding:10px}
+.board_list_ver tbody td.summary p{border-bottom:solid 1px #ddd;padding:5px}
+.board_list_ver tbody td.summary p a{color:#000}
+.board_list_ver tbody td.summary span{display:block;margin:10px 5px}
+
+/* 앨범형 목록 */
+.board_list_album{border-collapse:collapse;width:100%;overflow:hidden;text-align:center;table-layout:fixed}
+.board_list_album tbody td{color:#666;border-bottom:solid 1px #dbdbdb;line-height:16px;text-align:center}
+.board_list_album tbody td div{position:relative;width:300px;text-align:left;margin:0 auto}
+.board_list_album tbody td div input{position:absolute;left:0;top:3px}
+.board_list_album tbody td div .thumb{margin-bottom:10px}
+.board_list_album tbody td div a{color:#666}
+
+	/*숨김글*/
+.board_list_album tbody td.hidden{filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;background:#eee}
+
+/* 게시판 버튼*/
+.board_button{text-align:center;margin-top:15px}
+.board_button:after{content:'.';display:block;clear:both;visibility:hidden}
+.board_button select{min-width: 83px; height: 25px; padding: 0; color: #333; line-height: 19px; font-size: 13px; border: 1px solid #ccc;}
+.board_button .block{display:table;margin:0 auto;display:inline-block}
+.board_button .block button{line-height: 18px; font-size: 14px; border: 1px solid #444;}
+.board_button .ltb{float:left}
+.board_button .rtb{float:right}
+.board_button .btnIn {display:inline-block;vertical-align:top;color:#888;padding:2px 8px;font-size:12px;line-height:19px;font-weight:normal;font-family:'Noto Sans KR',sans-serif;border:1px solid #bbb;background:#f8f8f8}
+.board_button .btnIn.dark {color:#fff !important;border:solid 1px #444;background:#444}
+.board_button .btnIn.gray {color:#fff !important;border:solid 1px #888;background:#888}
+
+.board_button .block {text-align:center;margin-top:20px;display:block;}
+.board_button .block button,
+.board_button .block a {display:inline-block;*zoom:1;*display:inline;vertical-align:top;color:#fff !important;font-size:14px;text-align:center;padding:8px 0 10px;width:122px;font-weight:bold;font-family:'Nanum Gothic Bold',Dotum,sans-serif;border-bottom:solid 1px #444;background:#444}
+.board_button .block .gray {background:#888;border:solid 1px #888;}
+.board_button .block .bor {background:#fff;border:1px solid #999;color:#888 !important;}
+
+/* 게시판 페이징 */
+.board_paging{overflow:hidden;text-align:center;margin-top:10px}
+.board_paging li{display:inline}
+.board_paging li a{padding-right:9px;margin-left:3px;background:url(../imgs/global/bul_paging.gif) right 1px no-repeat}
+.board_paging li a.end{padding:0;margin-right:3px;background:none}
+.board_paging li a.first, .board_paging li a.prev, .board_paging li a.next, .board_paging li a.last{padding:0;margin:0;background:none}
+.board_paging li a.prev{margin-right:7px}
+.board_paging li a.next{margin-left:7px}
+
+/* 게시판 검색 */
+.board_search{margin:20px 0 0;padding:18px;text-align:center;line-height:25px;border:1px solid #eee;background:#fafafa}
+.board_search select{min-width: 83px; height: 25px; padding: 0; color: #333; line-height: 19px; font-size: 13px; border: 1px solid #ccc;}
+.board_search input{margin:0; box-sizing:unset;}
+.board_search label{margin:0 15px 0 5px}
+.board_search .smallbutton{width:80px}
+
+/* 글쓰기 */
+.board_type_hor{border-collapse:collapse;width:100%;margin:10px 0 0;border-top:1px solid #444;table-layout:fixed}
+.board_type_hor tbody tr.attach_thumb{display:none}
+.board_type_hor tbody th{background:#f3f3f3;border-bottom:solid 1px #dbdbdb;border-right:solid 1px #dbdbdb;padding:10px 15px;text-align:left;font-size:13px;color:#444;line-height:19px;font-weight:normal}
+.board_type_hor tbody th.line{border-left:solid 1px #dbdbdb}
+.board_type_hor tbody th.no_line{border-right:solid 0 #dbdbdb;border-bottom:solid 0 #dbdbdb}
+.board_type_hor tbody th.no_line1{border-right:solid 0 #dbdbdb}
+.board_type_hor tbody td{border-bottom:solid 1px #dbdbdb;padding:10px 15px;text-align:left;font-size:13px;line-height:19px}
+	/* 내용(에디터) */
+.board_type_hor tbody td.editor{padding:0 !important;border:0 none !important}
+.board_type_hor tbody td.editor .editor_container{border:1px solid #dbdbdb;border-left:1px solid #f3f3f3;border-right:1px solid #f3f3f3}
+	/* 내용(보기) */
+.board_type_hor tbody td.board_content .writer_ip{text-align:right;font-size:12px;margin-bottom:10px}
+.board_type_hor tbody td.board_content .attach_viewer{overflow:auto;margin-bottom:10px;text-align:center}
+	/* 첨부 */
+.board_type_hor tbody td.attach span{float:left;padding:0 0 5px;color:#CA1818}
+.board_type_hor tbody td.attach div{float:right;padding:0 0 5px}
+.board_type_hor tbody td.attach table{clear:both;table-layout:fixed}
+.board_type_hor tbody td.attach td{border:0 none;text-align:left;padding:5px 0 0}
+	/* 스펨방지 */
+.board_type_hor tbody td.anti_spam img { border:1px solid #ccc; }
+.board_type_hor tbody td input.w100{width:100%}
+.board_type_hor tbody .form th{padding:10px 15px;line-height:25px}
+.board_type_hor tbody .form td{padding:10px 15px;line-height:25px}
+
+/* 이전글,다음글 */
+.board_type_hor1{border-collapse:collapse;width:100%;margin:20px 0 0;border-top:1px solid #aaa;border-bottom:1px solid #aaa}
+.board_type_hor1 tbody td{border-bottom:solid 1px #dbdbdb;padding:10px 15px;text-align:left;font-size:13px;line-height:19px;color:#bbb}
+.board_type_hor1 tbody td a{color:#666}
+
+/* 코멘트 */
+.content_comment{position:relative;padding:9px;margin-top:20px;background-color:#f3f3f3;border:1px solid #dbdbdb;color:#444444}
+.content_comment form{padding-left:10px}
+.content_comment form label{display:inline-block;width:50px;font-size:13px;line-height:25px}
+.content_comment form input, .content_comment form img{vertical-align:middle}
+.content_comment form .opinion{padding:5px 0;line-height:25px}
+.content_comment form .opinion label{width:auto;padding-right:5px;margin:0 2px 0 0;text-indent:0;cursor:pointer}
+.content_comment form .opinion label img{margin:0 0 0 2px}
+.content_comment form .opinion input{margin:0}
+.content_comment form .opinion .title{display:inline-block;width:70px;margin:0;padding:0;vertical-align:top}
+.content_comment p.no_comment{margin-top:10px;padding:33px 0;text-align:center;font-size:14px;color:#999;background-color:#fff}
+/*의견 목록 */
+.content_comment .board_list_ver tbody tr.last td{border-bottom:0 none}
+.content_comment .board_list_ver tbody td{font-size:12px;line-height:18px}
+.content_comment .board_list_ver tbody td.icon{padding:0}
+.content_comment .board_list_ver tbody td.memo{text-align:left;padding:10px}
+.content_comment .board_list_ver tbody td.memo span{color:#6886BF}
+
+/* 삭제,수정 */
+.board_delete_box{width:356px;margin:50px auto 30px;padding: 0 0 19px;border:3px solid #c8c8c8;text-align:center;color:#888}
+.board_delete_box h5{padding:10px 0 12px;margin-bottom:19px;font-size:14px;font-weight:bold;background-color:#c8c8c8;text-align:center;color:#fff}
+.board_delete_box div.form{margin:17px 0 21px;padding:8px 0;border-top:1px solid #c8c8c8;border-bottom:1px solid #c8c8c8;background-color:#f9f9f9;color:#444}
+.board_delete_box div.form label{display:inline-block;width:55px;font-size:13px;line-height:25px}

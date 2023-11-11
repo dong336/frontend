@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+body{min-width:0;background:none}
+
+#pop_wrap{background:#f4f4f4;padding:5px}
+#pop_wrap .pop_cont{border:solid 1px #ccc;background:#fff;padding:20px 15px 30px}
+#pop_wrap .pop_cont.another{padding:9px 12px 27px;border:none}
+
+.pop_cont h1{margin-bottom:20px;padding-bottom:10px;font-size:22px;color:#222;line-height:28px;border-bottom:solid 2px #555}
+.pop_cont h1.another{margin:0;padding-bottom:14px;border-bottom:1px solid #d2d2d2}
+.pop_cont h1 .summary {font-size:13px;color:#777;padding-left:16px;}
+.pop_cont.another h1{margin:0;border-bottom:1px solid #d2d2d2}
+
+.pop_cont h2{color:#222;font-size:14px;font-family: 'Nanum Gothic Bold';letter-spacing:-1px;}
+
+/* 중앙 한마음 포인트 조회 */
+.center_check{width:282px;margin:0 auto;padding:30px 0 20px}
+.center_check:after{content:"";display:block;clear:both}
+.center_check input{float:left;width:133px;height:18px;margin:0;padding:0;text-indent:10px;font-size:12px;line-height:18px;border:1px solid #c9c9c9;background:#fafafa}
+.center_check .hyphen{float:left;width:12px;height:20px;text-align:center;color:#666;line-height:20px}
+
+/* 주소록 */
+.address_list{overflow-y:auto;max-height:182px;margin:0 0 20px;border:1px solid #d2d2d2;border-top:none}
+.address_list ul{}
+.address_list ul li{position:relative;min-width:1px;padding:6px 10px 6px 33px;word-wrap:break-word;font-size:12px;line-height:16px;border-top:1px solid #d2d2d2}
+.address_list ul li:first-child{border-top:none}
+.address_list ul li input{position:absolute;top:50%;left:10px;margin:-7px 0 0;padding:0}
+.address_list ul li.none{height:60px;padding:0;text-align:center;line-height:60px;border:none}
+
+.pro_cont{margin-top:-20px;padding-bottom:10px;border-bottom:2px solid #555}
+.pro_cont .table_ver{border-top:none}
+.pro_cont .table_hor{border-top:none}
+.pro_cont .table_hor th{padding:5px 0;font-size:14px;line-height:35px;font-weight:bold;border-bottom:none;background:none}
+.pro_cont .table_hor td{padding:5px 0;font-size:14px;line-height:35px;border-bottom:none}
+.pro_cont .table_hor td select{width:80%;height:35px;font-size:14px;line-height:29px}
+.pro_cont .table_hor td .market{vertical-align:top}
+.pro_cont .table_hor td .price{display:inline-block;margin:-2px 0 2px;vertical-align:top;font-size:22px}
+.pro_cont .table_hor td .ea{float:left;width:60px;padding:7px 0;text-indent:0;text-align:center;border-left:none;border-right:none}
+.pro_cont .table_hor td .eaminus{position:relative;float:left;overflow:hidden;width:35px;height:35px;box-sizing:border-box;text-indent:-9999px;border:1px solid #ccc;background:white}
+.pro_cont .table_hor td .eaminus:before{content:"";position:absolute;top:16px;left:9px;width:15px;height:1px;background:#222}
+.pro_cont .table_hor td .eaplus{position:relative;float:left;overflow:hidden;width:35px;height:35px;box-sizing:border-box;text-indent:-9999px;border:1px solid #ccc;background:white}
+.pro_cont .table_hor td .eaplus:before{content:"";position:absolute;top:16px;left:9px;width:15px;height:1px;background:#222}
+.pro_cont .table_hor td .eaplus:after{content:"";position:absolute;top:9px;left:16px;width:1px;height:15px;background:#222}
+
+/* 상품 진열 */
+.pop_pro_ver{padding:0 15px}
+.pop_pro_ver table{border:0 none;width:438px;border-bottom:solid 1px #bbb;table-layout:fixed}
+.pop_pro_ver table th{color:#888;font-weight:bold;padding:0 0 10px 10px;text-align:left}
+.pop_pro_ver table td{color:#444;padding:0 10px 10px 0}
+.pop_pro_ver table tr{background-color:#fff;line-height:1.5em}
+.pop_pro_ver table tr.gray{background-color:#f4f4f4}
+.pop_pro_ver table tr.gray th, .pop_pro_ver table tr.gray td, .pop_pro_ver table tr.amount th, .pop_pro_ver table tr.amount td{padding-top:10px;padding-bottom:0}
+.pop_pro_ver table tr.amount th, .pop_pro_ver table tr.amount td{padding-bottom:10px}
+.pop_pro_ver table tr.w_line th, .pop_pro_ver table tr.w_line td{background:#fff url(../imgs/goods/bg_detail_info.gif) 0 bottom repeat-x} /* bg가 white 안에 있는 점선라인 */
+.pop_pro_ver table tr.w_t_line th, .pop_pro_ver table tr.w_t_line td{background:#fff url(../imgs/goods/bg_detail_info.gif) 0 top repeat-x} /* bg가 gray 안에 있는 점선라인 */
+.pop_pro_ver table tr.g_t_line th, .pop_pro_ver table tr.g_t_line td{background:#f4f4f4 url(../imgs/goods/bg_detail_info.gif) 0 top repeat-x} /* bg가 gray 안에 있는 점선라인 */
+.pop_pro_ver table td.product{border-bottom:solid 1px #ddd;padding-bottom:10px}
+.pop_pro_ver table td.product a.img{display:block;float:left;width:90px}
+.pop_pro_ver table td.product a.img img{border:solid 1px #ddd}
+.pop_pro_ver table td div.num{line-height:21px}
+.pop_pro_ver table td div.num input{display:block;float:left;border:solid 1px #a2a2a2;margin:1px 2px 0 0;padding:2px;font-size:11px}
+.pop_pro_ver table td div.num span{display:block;float:left;margin-right:5px}
+.pop_pro_ver table td div.num span a{display:block;margin:1px 0}
+.pop_pro_ver table tr.option th, .pop_pro_ver table tr.option td{padding-top:0;padding-bottom:5px}
+.pop_pro_ver table tr.option_first th, .pop_pro_ver table tr.option_first td{padding-top:12px}
+.pop_pro_ver table tr.option_last th, .pop_pro_ver table tr.option_last td{padding-bottom:12px}
+.pop_pro_ver table tr.option td select{width:100%;height:23px;font-size:11px}
+.pop_pro_ver table tr.option td p{font-size:11px;line-height:15px;margin-bottom:5px}
+.pop_pro_ver table tr.option td textarea{width:100%;font-size:11px}
+	/* 옵션선택시 나오는 부분 */
+.pop_pro_ver table tr.option_select td{padding-right:15px;padding-left:15px;padding-bottom:8px!important;font-size:11px;color:#888}
+.pop_pro_ver table tr.option_select td p{padding:0 10px;color:#8e5c2c;line-height:1.3em}
+.pop_pro_ver table tr.option_select td div{height:130px;overflow:hidden;overflow-y:scroll;border:solid 1px #ddd;padding:5px 5px 0;margin:5px 0 2px;background-color:#fff}
+.pop_pro_ver table tr.option_select td div ul{overflow:hidden}
+.pop_pro_ver table tr.option_select td div ul li{float:left;margin-bottom:5px}
+.pop_pro_ver table tr.option_select td div ul li.line{border-top:solid 1px #ddd}
+.pop_pro_ver table tr.option_select td div ul li.price{float:right;padding:0 5px;font-weight:bold;margin-top:3px}
+.pop_pro_ver table tr.option_select td div ul li.title{width:55%;color:#444;margin-top:3px;margin-left:5px}
+.pop_pro_ver table tr.option_select td div ul li input{display:block;float:left;border:solid 1px #a2a2a2;margin:1px 2px 0 0;padding:2px;font-size:11px}
+.pop_pro_ver table tr.option_select td div ul li span{display:block;float:left}
+.pop_pro_ver table tr.option_select td div ul li span a{display:block;margin:1px 0}
+	/* 최종가격 */
+.pop_pro_ver table tr.total_sum td{text-align:right;padding:10px 8px 6px}
+.pop_pro_ver table tr.total_sum td strong{color:#000;font-size:12px;font-family:Tahoma;color:#de3434}
+
+
+/* p */
+#pop_wrap .pop_cont p.txt_area{overflow:hidden;margin-bottom:20px;padding:17px 19px;font-size:11px;border:1px solid #dcdcdc;background-color:#f8f8f8;color:#555}
+#pop_wrap .pop_cont .reviewImg{margin-bottom:20px;padding:17px 19px;border:1px solid #dcdcdc;background:#f8f8f8}
+#pop_wrap .pop_cont .reviewImg table th img{width:100px;height:100px}
+#pop_wrap .pop_cont .reviewImg table td{padding:0 10px;font-size:14px;color:#666;line-height:18px}
+
+.bul_list{padding:14px;border-top:1px solid #444;margin:10px 0 20px}
+
+ul.bul_list1{overflow:hidden;margin-bottom:20px;padding:17px 19px;font-size:11px;border:1px solid #dcdcdc;background-color:#f8f8f8;color:#555}
+ul.bul_list1 li{padding-left:10px;background:url(../imgs/icon/bul_red_square.gif) 0 5px no-repeat;line-height:18px}
+
+/* 우편번호 찾기 - 지번 */
+ul.zip_list{height:285px;overflow:hidden;overflow-y:scroll;border:1px solid #DCDCDC;padding:9px 10px 4px}
+ul.zip_list li{padding-left:7px;font-size:11px;line-height:1.3em;background:url(../imgs/icon/bul_red_square.gif) 0 5px no-repeat;margin-bottom:5px}
+
+/* 우편번호 찾기 - 도로명 */
+.pop_zip{padding:14px;background:white;border:1px solid #ccc;color:#666;min-height:360px}
+.pop_zip h1{height:28px;border-bottom:2px solid #faa419}
+.pop_zip h1 img{margin:3px}
+.zip_wrap .zip_type{height:45px;border-bottom:1px solid #dcdcdc}
+.zip_wrap .zip_type ul{padding:16px 0 0 15px;display:block}
+.zip_wrap .zip_type ul li{float:left;margin-left:10px}
+.zip_wrap .zip_type ul li:first-child{margin-left:0px}
+.zip_wrap .zip_type label{margin-left:5px;cursor:pointer;height:13px;line-height:13px;overflow:hidden}
+.zip_wrap .zip_type input{width:13px;height:13px;margin-top:-2px}
+.zip_wrap .zip_section{display:none}
+.zip_wrap .zip_section .ex{color:black;font-size:11px;text-align:center;padding:15px 0;line-height:16px}
+.zip_wrap .zip_section .ex span{color:#999}
+.zip_wrap .zip_section .tip{color:#888;margin-top:10px}
+.zip_wrap .zip_section .tip span{margin-left:10px}
+.zip_wrap .zip_section .tip a{text-decoration:none;color:#888}
+.zip_wrap .zip_section .tip a:hover{text-decoration:underline;color:#555}
+.zip_wrap .zip_search{background:#f8f8f8;border:1px solid #ccc;padding:10px 0px;overflow:hidden}
+.zip_wrap .zip_search ul{margin-top:-7px;margin-left:10px}
+.zip_wrap .zip_search label{color:#444;font-weight:bold;width:50px;display:inline-block;float:left;height:21px;line-height:23px;cursor:pointer}
+.zip_wrap .zip_search select{font-size:12px;width:90px;float:left;border:1px solid #ccc;color:#888;height:23px;line-height:23px}
+.zip_wrap .zip_search input{font-size:12px;width:85px;display:inline-block;float:left;border:1px solid #ccc;background:white;height:21px;line-height:21px;padding-left:5px;color:#888;margin:0}
+.zip_wrap .zip_search button{float:left;margin-left:10px}
+.zip_wrap .zip_search li{min-width:142px;float:left;margin-top:7px;margin-left:15px;height:23px}
+.zip_wrap .zip_search .zip_search_detail{display:none}
+.zip_wrap .zip_search .b_dong{background:#fff url(../imgs/global/address_input_txt4.png) 5px 5px no-repeat}
+.zip_wrap .zip_search .b_jibun{background:#fff url(../imgs/global/address_input_txt1.png) 5px 5px no-repeat}
+.zip_wrap .zip_search .b_street{background:#fff url(../imgs/global/address_input_txt5.png) 5px 5px no-repeat}
+.zip_wrap .zip_search .b_bldgNo{background:#fff url(../imgs/global/address_input_txt2.png) 5px 5px no-repeat}
+.zip_wrap .zip_search .b_bldgName{background:#fff url(../imgs/global/address_input_txt3.png) 5px 5px no-repeat}
+.zip_wrap .zip_result{padding:5px 0;height:149px;overflow-y:auto;overflow-x:hidden;border:1px solid #ddd}
+.zip_wrap .zip_result ul{margin:0 10px}
+.zip_wrap .zip_result li{text-indent:10px;padding:6px 0;border-bottom:1px solid #ddd}
+.zip_wrap .zip_result li a{color:#666;text-decoration:none}
+.zip_wrap .zip_result li a:hover{color:#444;text-decoration:underline}
+.zip_wrap .zip_result li a span{display:block;font-size:11px}
+.zip_wrap .zip_btn{text-align:center;margin:20px 0}
+
+/* 교환,취소,환불 */
+.claim_goods{_height:expression(this.scrollHeight>100?"100px":"auto");/* sets max-height for IE6 */ max-height:100px;overflow-x:hidden;overflow-y:auto}
+.claim_goods li{overflow:hidden}
+.claim_goods li span{display:block;float:left}
+.claim_goods li strong{display:block;float:right;margin-right:5px}
+td.refund_account select{margin-left:32px}
+td.refund_account input{margin-left:10px}
+
+/* 확대보기 */
+#pop_zoom{overflow:hidden}
+#pop_zoom .zoom_left{float:left;overflow:hidden;margin-right:26px;padding:2px;border:1px solid #ccc;text-align:center}
+#pop_zoom .zoom_right{float:left;overflow:hidden;text-align:center}
+#pop_zoom .zoom_right p{margin:30px 0 64px 13px;padding:0;border:0 none;background:none;line-height:16px;text-align:left}
+#pop_zoom .zoom_right p span{display:block;margin-top:8px}
+#pop_zoom .zoom_right p span strong{margin-right:7px;color:#000}
+#pop_zoom .thumbs{overflow-y:scroll;height:127px;margin-bottom:10px;padding:5px 0 5px 5px;background-color:#f8f8f8}
+#pop_zoom .thumbs li{float:left;margin:4px;border:1px solid #ccc}
+#pop_zoom .thumbs li img{margin:1px}
+#pop_zoom .thumbs li.current{border:2px solid #faa419}
+#pop_zoom .thumbs li.current img{margin:0}
+
+/* 나의 쿠폰함 */
+.pop_coupon_info{height:147px;padding:12px 0 0 209px;background:url(../imgs/mypage/bg_popup_coupon.png) 0 0 no-repeat;margin:50px 0 0 60px}
+.pop_coupon_info li{margin-bottom:3px;line-height:0}
+
+/* 상품평,상품Q&A */
+.question_content{word-wrap:break-word;white-space:-moz-pre-wrap;white-space:pre-wrap}
+.question_content div{_height:expression(this.scrollHeight>70?"70px":"auto");/* sets max-height for IE6 */ max-height:70px;overflow-x:hidden;overflow-y:auto}
+
+/* 박스 */
+.gradient_box{margin-bottom:27px;padding:12px 18px 15px;font-size:11px;border-top:1px solid #ccc;background:url(../imgs/mypage/bg_popup_gradient_box.png) 0 bottom no-repeat}
+.gradient_box input{margin-left:5px}
+.cancel_result{line-height:200%;text-align:Center;color:#222;font-size:12px;letter-spacing:-0.01em}
+.cancel_result strong.big{font-size:16px;color:#000}
+
+/* 주문취소 안내 */
+h5.myorder_title{position:relative}
+h5.myorder_title a.btn{position:absolute;right:0;top:0}
+.myorder_list thead th{border-bottom:solid 1px #ddd;line-height:14px}
+.myorder_list td.order_no a{display:block;margin-top:3px}
+.myorder_list td.order_pro{text-align:left}
+.myorder_list td.order_pro a{display:block;overflow:hidden}
+.myorder_list td.order_pro img.pro_img{display:block;float:left;width:50px;height:50px;margin-right:10px}
+.myorder_list td.order_pro span.pro_info{display:block;float:left;padding-top:5px}
+.myorder_list td.order_pro span.pro_info strong{display:block;margin-bottom:3px}
+.myorder_list td.state_btn a{display:block;margin:2px 0}
+.myorder_list td.cancel_reason select{width:90%;display:block;margin-bottom:5px}
+.myorder_list td.cancel_reason textarea{width:90%;font-size:11px}
+.refund_box{overflow:hidden;margin:10px 0 0}
+.refund_box .refund_table_left{width:48%;float:left}
+.refund_box .refund_table_right{width:48%;float:right}
+.refund_table_left table{border-top:1px solid #444}
+.refund_table_left tbody th{background:#f3f3f3;font-size:11px;text-align:left;font-weight:normal;padding:8px 15px 7px;color:#444;border-bottom:solid 1px #dbdbdb;border-right:solid 1px #dbdbdb}
+.refund_table_left tbody td{text-align:right;padding:8px 15px 7px;color:#444;border-bottom:solid 1px #dbdbdb;line-height:16px;font-size:12px}
+.refund_table_right table{border-top:1px solid #444}
+.refund_table_right tbody th{background:#444;font-size:11px;text-align:left;font-weight:bold;padding:8px 15px 7px;color:#fff;border-bottom:solid 1px #dbdbdb;border-right:solid 1px #dbdbdb}
+.refund_table_right tbody td{text-align:right;padding:8px 15px 7px;color:#444;border-bottom:solid 1px #dbdbdb;line-height:16px;font-size:12px;font-weight:bold}
+.refund_table_right tbody td span.total{font-size:14px}
+td.bank_name{background:#f6f6f6;color:#444;border-right:solid 1px #dbdbdb}
+div.reason{border:solid 4px #ddd;padding:15px;margin-top:10px}
+div.reason textarea{width:98%;display:block;margin-top:5px}
+div.reason select{width:83%}
+div.reason strong{color:#444}
+div.reason .input_reason{background:#fff url(../imgs/mypage/txt_claim_reason.png) 3px 3px no-repeat}

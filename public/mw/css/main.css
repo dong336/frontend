@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+#ncgn{overflow:hidden;margin:0 0 -30px}
+#ncgn:after{content:"";display:block;clear:both}
+#ncgn h3{position:relative;height:23px;margin:0 20px;text-align:left;font-size:25px;color:#111;line-height:22px;font-weight:500}
+#ncgn h3 .more-button{position:absolute;top:-1px;right:-4px;overflow:hidden;width:24px;height:24px;text-indent:-9999px}
+#ncgn h3 .more-button:before{content:"";position:absolute;top:50%;left:50%;width:16px;height:2px;margin:-1px 0 0 -8px;background:#000}
+#ncgn h3 .more-button:after{content:"";position:absolute;top:50%;left:50%;width:2px;height:16px;margin:-8px 0 0 -1px;background:#000}
+
+/* 비주얼 */
+#container .main-visual{position:relative;width:100%;margin-bottom:30px}
+#container .main-visual .gaessamzieFlickStage .gaessamzieFlickItem img{display:block;width:100%;height:100%;object-fit:cover}
+#container .main-visual.gaessamzieFlick .gaessamzieFlickStage .gaessamzieFlickItem a,#container .brand-visual.gaessamzieFlick .gaessamzieFlickStage .gaessamzieFlickItem img{height:100%}
+#container .main-visual .gaessamzieFlickPrev{position:absolute;bottom:10px;left:50%;right:auto;margin-top:0;z-index:1;text-indent:-9999px;width:20px;height:20px;transform:translate(-50px,0)}
+#container .main-visual .gaessamzieFlickPrev:after{content:'';position:absolute;top:5px;left:7px;width:6px;height:6px;border-left:2px solid #111;border-bottom:2px solid #111;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
+#container .main-visual .gaessamzieFlickNext{position:absolute;bottom:10px;left:auto;right:50%;margin-top:0;z-index:1;text-indent:-9999px;width:20px;height:20px;transform:translate(50px,0)}
+#container .main-visual .gaessamzieFlickNext:after{content:'';position:absolute;top:5px;right:7px;width:6px;height:6px;border-right:2px solid #111;border-bottom:2px solid #111;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
+#container .main-visual .gaessamzieFlickIndicator{position:absolute;bottom:40px;left:50%;width:50%;-moz-transform:translate3d(-50%,0,0);-webkit-transform:translate3d(-50%,0,0);transform:translate3d(-50%,0,0);margin-top:0}
+#container .main-visual .gaessamzieFlickIndicator li{margin:0;height:2px}
+#container .main-visual .gaessamzieFlickIndicator li a{width:100%;height:2px;background:rgba(0,0,0,.25)}
+#container .main-visual .gaessamzieFlickIndicator li.active a{background:#111}
+#container .main-visual .gaessamzieFlickNumber{z-index:3;position:absolute;bottom:20px;left:50%;transform:translate(-50%,0);color:#000;font-size:13px}
+#container .main-visual .gaessamzieFlickNumber strong{font-weight:normal}
+
+/* 브랜드 */
+#container .brandlist{width:100%; height:100%;}
+#container .brandlist ul{border-left:20px solid transparent;}
+#container .brandlist ul li{text-align:center; background:#fff; display:flex; justify-content:center; align-items:center;}
+#container .brandlist ul li img{display:block; width:100%; height:100%; object-fit:cover;}
+
+/* 상품 리스트 */
+#container .best-product{float:left;clear:both;overflow:hidden;width:100%;padding:30px 0}
+#container .best-product .list{margin:0;border-top:24px solid transparent}
+#container .best-product .stage{position:relative;width:100%;border-top:24px solid transparent}
+#container .best-product .stage .item-list{position:absolute;top:0;left:9999px;z-index:1;width:100%}
+#container .best-product .stage .item-list:after{content:"";display:block;clear:both}
+#container .best-product .stage .item-list .item-button{display:none}
+#container .best-product .stage .item-list .product-item{float:left;width:100%;margin:0 0 -30px;box-sizing:border-box}
+#container .best-product .stage .item-list.active{z-index:3}
+#container .best-product .horizonwrap{overflow:visible;margin:30px 0 0}
+#container .best-product .horizonwrap .product-item{padding:0 0 100px}
+#container .best-product .horizonwrap .product-item .list .item{float:none;width:162px;margin:0;box-sizing:content-box;border-left:none;border-right:10px solid transparent}
+#container .best-product .horizonwrap .product-item .list .item a .text{height:81px}
+#container .best-product .horizonwrap .product-item .list .item:first-child{border-left:20px solid transparent}
+#container .best-product .horizonwrap .product-item .list .item:last-child{border-right:20px solid transparent}
+
+/* 배너 */
+#container .banner{min-width:1px;overflow:hidden;margin:30px 0;width:100%;clear:both}
+#container .banner .banner-list li{width:100%;line-height:0}
+#container .banner .banner-list li + li{margin-top:8px}
+#container .banner .banner-list a{display:inline-block}
+
+/* 동영상 */
+#container .video-section{position:relative;float:left;clear:both;overflow:hidden;width:100%;margin:30px 0}
+#container .video-section h3{padding:0 0 30px}
+#container .video-section .stage{position:relative;margin:0 10px}
+#container .video-section .stage .item-list{position:relative;width:100%;box-sizing:border-box;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:27px solid transparent}
+#container .video-section .stage .item-list img{display:block;width:100%}
+#container .video-section .stage .item-list .play-button{position:absolute;top:0;left:0;z-index:3;overflow:hidden;width:100%;height:100%;text-indent:-9999px;background:url(../imgs/global/g-frame.gif) 0 0 repeat}
+#container .video-section .stage .item-list .pause-button{position:absolute;top:0;left:0;z-index:2;overflow:hidden;width:100%;height:100%;text-indent:-9999px;background:url(../imgs/global/g-frame.gif) 0 0 repeat}
+#container .video-section .stage .item-list .video{position:absolute;top:0;left:0;z-index:1;overflow:hidden;width:100%;height:100%;border-radius:6px;background:white}
+#container .video-section .stage .item-list .video iframe{position:absolute;top:0;left:0;width:100%;height:100%}

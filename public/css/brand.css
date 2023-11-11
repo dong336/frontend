@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+.brandMovie{width:900px;height:502px;padding:39px 0 0}
+.brandPhoto{}
+.brandPhoto h1{overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;height:39px;margin:0 29px 0 0;padding:0;white-space:nowrap;font-size:18px;color:white;line-height:18px;font-family:'Nanum Gothic Bold'}
+.brandPhoto img{display:block;clear:both;max-width:998px;border:1px solid black}
+
+.banners{position:relative;margin:0 0 30px;padding:19px 0 0}
+.banners .indicator{position:absolute;top:0;right:0}
+.banners .indicator li{float:left;width:14px;height:14px;margin:0 0 0 6px}
+.banners .indicator li button{float:left;overflow:hidden;width:14px;height:14px;margin:0;padding:0;text-indent:-9999px;outline:none;border:none;background:url(../imgs/main/review_indicator.png) 0 0 no-repeat}
+.banners .indicator li.active button{background-position:0 -24px}
+.banners .bannerList{position:relative;overflow:hidden;width:100%}
+.banners .bannerList ul{position:absolute;top:0;left:0;-moz-transition:0.4s;-webkit-transition:0.4s;transition:0.4s}
+.banners .bannerList ul li{position:relative;float:left;width:1000px}
+.banners .bannerList ul li a,
+.banners .bannerList ul li img{max-width:100%;vertical-align:top}
+
+.banner{position:relative;margin:0 0 30px}
+.banner a,
+.banner img{max-width:100%;vertical-align:top}
+
+.brand_tab{min-width:1px;height:39px;border-bottom:1px solid #a7a7a7}
+.brand_tab:after{content:"";display:block;clear:both}
+.brand_tab li{float:left;margin:0 -1px 0 0}
+.brand_tab li a{display:block;width:165px;height:38px;text-align:center;font-size:15px;color:#6c6c6c;line-height:39px;font-family:'Nanum Gothic Bold';border:1px solid #d5d5d5;border-bottom:none;background:#eee}
+.brand_tab li.active{position:relative}
+.brand_tab li.active a{width:168px;padding:0 0 1px;color:black;border:1px solid #a7a7a7;border-bottom:none;background:white}
+
+.producerList{width:960px;margin:0 auto}
+.producerList:after{content:"";display:block;clear:both}
+.producerList li{position:relative;float:left;width:958px;min-height:94px;margin:30px 0 0;border:1px solid #dadada}
+.producerList li img{display:block;max-width:958px}
+.producerList li a{position:absolute;bottom:32px}
+.producerList li a.story{right:243px}
+.producerList li a.movie{right:128px}
+.producerList li.none{width:960px;height:94px;text-align:center;line-height:94px;border:none}
+
+.adjust_image_container{width:100%;padding:0 0 50px}
+
+.field{position:relative;width:100%;padding:42px 0 0;background:url(../imgs/brand/dotline.gif) 0 0 repeat-x}
+.field h3{height:39px;font-size:22px;color:black;line-height:26px;font-family:'Nanum Gothic Bold'}
+.field .prev{position:absolute;top:81px;left:0;overflow:hidden;width:30px;height:170px;text-indent:-9999px;border:1px solid #eaeaea;background:url(../imgs/brand/photo_prev.png) center center no-repeat}
+.field .next{position:absolute;top:81px;right:0;overflow:hidden;width:30px;height:170px;text-indent:-9999px;border:1px solid #eaeaea;background:url(../imgs/brand/photo_next.png) center center no-repeat}
+.field .photo_list{position:relative;overflow:hidden;width:930px;height:261px;margin:0 auto}
+.field .photo_list li{display:none;position:absolute;top:0;width:170px}
+.field .photo_list li a{display:block;position:relative;overflow:hidden;width:168px;height:168px;margin:0 auto 17px;border:1px solid #cfcfcf}
+.field .photo_list li a img{display:block;width:168px;height:168px}
+.field .photo_list li p{overflow:hidden;height:36px;word-wrap:break-word;text-align:center;font-size:13px;color:#4f4f4f;line-height:18px}
+
+.specialty{padding:42px 0 0;background:url(../imgs/brand/dotline.gif) 0 0 repeat-x}
+.specialty h3{height:39px;font-size:22px;color:black;line-height:26px;font-family:'Nanum Gothic Bold'}
+.specialty .cont{padding:0 0 20px}
+.specialty .cont h4{height:27px;padding:4px 0 0;font-size:16px;color:#222121;line-height:20px;font-family:'Nanum Gothic Bold'}
+.specialty .cont .product_list{width:1020px;margin:0 0 0 -10px}
+.specialty .cont .product_list:after{content:"";display:block;clear:both}
+.specialty .cont .product_list li{position:relative;float:left;width:182px;height:268px;margin:0 10px 20px;padding:11px 0 0;text-align:center;border:1px solid #d6d6d6}
+.specialty .cont .product_list li input{position:absolute;top:-1px;left:-1px;width:13px;height:13px;margin:0;padding:0}
+.specialty .cont .product_list li .icons{position:absolute;top:11px;left:11px}
+.specialty .cont .product_list li p{width:162px;margin:0 auto;padding:7px 0 0;text-align:left;line-height:18px}
+.specialty .cont .product_list li p:after{content:"";display:block;clear:both}
+.specialty .cont .product_list li p span{display:block;overflow:hidden}
+.specialty .cont .product_list li p .pro_name{height:36px;word-wrap:break-word}
+.specialty .cont .product_list li p .pro_name a{color:#4f4f4f}
+.specialty .cont .product_list li p .pro_summary{height:36px;word-wrap:break-word;font-size:12px}
+.specialty .cont .product_list li p .pro_summary a{color:#7b7b7b}
+.specialty .cont .product_list li p .org_price{display:block;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap}
+.specialty .cont .product_list li p .org_price del{margin:0 5px 0 0;color:#7b7b7b}
+.specialty .cont .product_list li p .org_price .sale_price{display:inline}
+.specialty .cont .product_list li p .org_price .sale_price strong{vertical-align:top}
+.specialty .cont .product_list li.none_pro{clear:both;width:998px;height:auto;padding:30px 0;color:#888}
+
+.review{padding:42px 0 0;background:url(../imgs/brand/dotline.gif) 0 0 repeat-x}
+.review h3{height:19px;font-size:22px;color:black;line-height:26px;font-family:'Nanum Gothic Bold'}
+.review .review_list{width:1020px;margin:0 0 0 -10px}
+.review .review_list:after{content:"";display:block;clear:both}
+.review .review_list li{position:relative;float:left;width:184px;height:272px;margin:20px 10px 0;color:#7b7b7b;line-height:18px}
+.review .review_list li a{display:block;width:160px;height:160px;padding:11px;border:1px solid #cfcfcf}
+.review .review_list li span{display:block;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;white-space:nowrap}
+.review .review_list li .name{color:#555;font-family:'Nanum Gothic Bold'}
+.review .review_list li .title{margin:0 0 12px}
+.review .review_list li .point{height:12px;padding:9px 0 7px}
+.review .review_list li .author{float:left;max-width:96px;height:12px;margin:0 10px 0 0;line-height:10px}
+.review .review_list li .date{float:left;height:12px;padding:0 0 0 9px;line-height:10px;border-left:1px solid #c0c0c0}
+
+#makeHtml{font-size:15px;color:#404040;line-height:28px}
+#makeHtml img{max-width:1000px}
+#makeHtml a{color:#404040}
+#makeHtml h1{margin:0;padding:0 0 18px;font-size:24px;color:#404040;line-height:38px;font-family:'Nanum Gothic Bold'}
+#makeHtml h1 strong{font-size:30px}
+#makeHtml h1 span{font-size:22px}
+#makeHtml .section{word-wrap:break-word}
+#makeHtml .section h2{padding:0 0 18px;font-size:22px;color:#404040;line-height:28px;font-family:'Nanum Gothic Bold'}
+#makeHtml .section p{min-width:1px;padding:0 0 44px}
+#makeHtml .section p:after{content:"";display:block;clear:both}
+#makeHtml .section p strong{color:#c92e14}
+#makeHtml .section .img{display:block;padding:0 0 44px;text-align:center}
+#makeHtml .section .img img{vertical-align:top}
+#makeHtml .section .img span{display:block;padding:10px 0 0;word-wrap:break-word;text-align:center;font-size:13px;color:#6b6a6a;line-height:18px}
+#makeHtml .section .imgHalf{display:block;width:100%;padding:0 0 44px;text-align:center}
+#makeHtml .section .imgHalf:after{content:"";display:block;clear:both}
+#makeHtml .section .imgHalf img{vertical-align:top}
+#makeHtml .section .imgHalf span{display:block;padding:10px 0 0;word-wrap:break-word;text-align:center;font-size:13px;color:#6b6a6a;line-height:18px}
+#makeHtml .section .imgHalf .item1{float:left}
+#makeHtml .section .imgHalf .item2{float:right}
+#makeHtml .section .imgLeft{float:left;padding:10px 50px 10px 0;}
+#makeHtml .section .imgLeft img{vertical-align:top}
+#makeHtml .section .imgLeft span{display:block;padding:10px 0 0;word-wrap:break-word;font-size:13px;color:#6b6a6a;line-height:18px}
+#makeHtml .section .imgRight{float:right;padding:10px 0 10px 50px;}
+#makeHtml .section .imgRight img{vertical-align:top}
+#makeHtml .section .imgRight span{display:block;padding:10px 0 0;word-wrap:break-word;text-align:right;font-size:13px;color:#6b6a6a;line-height:18px}
+
+
+
+
+
+
